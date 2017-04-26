@@ -1,6 +1,6 @@
 {
-  "name": "grunstrap",
-  "description": "A starter for jquery, grunt, sass, uglify, markdown, documentation",
+  "name": "boxmodel",
+  "description": "A dimensions input generator using jQuery",
   "repository": "http://www.github.com/tpaksu/grunstrap",
   "license": "MIT",
   "version": "1.0.0",

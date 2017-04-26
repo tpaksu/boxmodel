@@ -1,0 +1,60 @@
+.boxmodel-container {
+    display: flex;
+    div:not(.flex-row) {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+    span.boxmodel-text {
+        font-size: 10px;
+        font-family: Verdana;
+        display: inline-block;
+        &.boxmodel-header {
+            position: absolute;
+            bottom: 2px;
+            left: 2px;
+        }
+    }
+    .boxmodel-margin {
+        background: #fff;
+        border: 1px dashed #aaa;
+        position: relative;
+    }
+    .boxmodel-border {
+        background: #eee;
+        border: 1px solid #aaa;
+        position: relative;
+    }
+    .boxmodel-padding {
+        background: #ddd;
+        border: 1px dashed #aaa;
+        position: relative;
+    }
+    .boxmodel-content {
+        background: #fff;        
+        width: 60px;
+        height: 30px;
+        margin: 0;
+        border: 1px solid #aaa;
+        position: relative;
+    }
+    .flex-row {
+        text-align: center;
+    }
+    input, input:focus, input:active {
+        background: rgba(255, 255, 255, 0.3);
+        color: black;
+        font-size: 8px;
+        font-family: Verdana;
+        box-shadow: none;
+        border: 1px solid #eee;
+        outline: none;
+        width: 16px;
+        margin: 2px;
+        padding: 2px;
+    }
+}
