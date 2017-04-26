@@ -1,0 +1,59 @@
+<!DOCTYPE  html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>
+            Your Documentation Title
+        </title>
+        <link href="includes/bootstrap.min.css" rel="stylesheet" />
+        <link href="includes/prism.css" rel="stylesheet" />
+        <link href="includes/toc.css" rel="stylesheet" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="../js/jquery-2.1.4.min.js" type="text/javascript"><\/script>')</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="includes/prism.js" type="text/javascript"></script>                
+        <script src="includes/toc.min.js" type="text/javascript"></script>         
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet"/>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>        
+    </head>
+    <body>    
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-3 hidden-sm" id="scrollspy"></div>
+    			<div class="col-md-9"><h1 id="markdown-doc-here">Markdown Doc Here</h1>
+<p>This template supports:</p>
+<ul>
+<li>Bootstrap</li>
+<li>Font Awesome</li>
+<li><p>Prism.js </p>
+<pre><code class="lang-html">  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+      &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      Here&#39;s the code template
+  &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+</li>
+<li>toc.js, for automatically creating affix and scrollspy supported table of contents</li>
+</ul>
+<h2 id="toc-line-1">TOC Line 1</h2>
+<h3 id="toc-line-1-1">TOC Line 1.1</h3>
+</div>
+			</div>
+	    </div>
+    	<script type="text/javascript">
+        if((window.innerWidth <= 800 && window.innerHeight <= 600) || (window.innerWidth <= 600 && window.innerHeight <= 800)) {
+    	   $("img").addClass("img-responsive");
+        }else{
+            $('#scrollspy').DynamicScrollspy({
+                tH: 1,
+                bH: 3,
+            });    
+        }
+    	</script>
+    </body>
+</html>
