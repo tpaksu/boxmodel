@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"key",
+				"keyUpEvent"
+			],
+			[
 				"inpu",
 				"inputName"
 			],
@@ -510,10 +514,6 @@
 			[
 				"from_",
 				"from_airport_location"
-			],
-			[
-				"diststart",
-				"$distStartLat〔variable〕"
 			]
 		]
 	},
@@ -542,7 +542,7 @@
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 2527,
+				"buffer_size": 4574,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -551,7 +551,7 @@
 			"file": "css/style.scss",
 			"settings":
 			{
-				"buffer_size": 1394,
+				"buffer_size": 1838,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -850,13 +850,7 @@
 	},
 	"expanded_folders":
 	[
-		"/D/trunk/boxmodel",
-		"/D/trunk/boxmodel/build",
-		"/D/trunk/boxmodel/build/css",
-		"/D/trunk/boxmodel/build/js",
-		"/D/trunk/boxmodel/css",
-		"/D/trunk/boxmodel/docs/includes",
-		"/D/trunk/boxmodel/js"
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel"
 	],
 	"file_history":
 	[
@@ -1027,9 +1021,13 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"<input type='text' name='(\\%NAME%_(.+)_\\w+)'>",
+			"<input type='text' name='(.+)'>",
+			"input type='number'",
+			"input type='text'",
 			"wpColorPicker",
 			"<?php echo $boxtured_id;?>",
 			"echo $id;",
@@ -1153,18 +1151,18 @@
 			"map_segment_id",
 			"dd(",
 			"map_segment_id",
-			"logback",
-			"createSegment",
-			"ol",
-			"ion",
-			"../fonts"
+			"logback"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"<span class='boxmodel-input-container boxmodel-input-direction-\\2'><input type='text' name='\\1'></span>",
+			"<span class='boxmodel-input-container'><input type='text' name='\\1'></span>",
+			"input type='text'",
+			"input type='number'",
 			"#<?php echo $boxtured_id;?>",
 			"echo $boxtured_id;",
 			"",
@@ -1288,11 +1286,7 @@
 			"",
 			"\\1, // \\2",
 			"",
-			".temp",
-			"typedef enum { \\2 } \\1;",
-			"typedef enum",
-			"@box-item-background",
-			"@box-text-hilight"
+			".temp"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1303,7 +1297,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1373,15 +1367,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2527,
+						"buffer_size": 4574,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1116,
-								1116
+								4270,
+								4270
 							]
 						],
 						"settings":
@@ -1393,10 +1387,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1405,26 +1399,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1394,
+						"buffer_size": 1838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1394,
-								1394
+								500,
+								500
 							]
 						],
 						"settings":
 						{
+							"auto_indent": true,
 							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
