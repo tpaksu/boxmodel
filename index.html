@@ -1,15 +1,128 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Box Model Input</title>
-	<link rel="stylesheet" type="text/css" href="build/css/style.min.css">
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="build/js/script.min.js"></script>
-</head>
-<body>
-	<div class="boxmodel" data-name="boxmodel-test"></div>
-	<script type="text/javascript">
-		$(".boxmodel").boxModel();
-	</script>
-</body>
+    <head>
+        <title>
+            Box Model Input
+        </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <link href="build/css/style.min.css" rel="stylesheet" type="text/css">
+                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
+                </script>
+                <script src="build/js/script.min.js" type="text/javascript">
+                </script>
+                <style type="text/css">
+                    body {
+					font-family: Consolas;
+					font-size: 12px;					
+				}
+                </style>
+            </link>
+        </meta>
+    </head>
+    <body>
+        <form action="index.html" method="GET" style="width: 80%; margin: 0 auto;">
+            <div style="display: flex; flex-wrap: wrap;">
+                <div style="padding : 20px">
+                    <b>
+                        Chrome Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-chrome-skin" data-name="boxmodel-test-1">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px">
+                    <b>
+                        Firebug Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-firebug-skin" data-name="boxmodel-test-2">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px">
+                    <b>
+                        IE Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-ie-skin" data-name="boxmodel-test-3">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px">
+                    <b>
+                        Default Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel" data-name="boxmodel-test-4">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px;background: black; color: white;">
+                    <b>
+                        Dark Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-dark-skin" data-name="boxmodel-test-5">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px;background: black; color: white;">
+                    <b>
+                        Neo Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-neo-skin" data-name="boxmodel-test-6">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px;background: black; color: white;">
+                    <b>
+                        Dyno Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-dyno-skin" data-name="boxmodel-test-7">
+                        </div>
+                    </br>
+                </div>
+                <div style="padding : 20px;background: black; color: white;">
+                    <b>
+                        Mod Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-mod-skin" data-name="boxmodel-test-8">
+                        </div>
+                    </br>
+                </div>
+            </div>
+            <input type="submit" style="margin-top: 20px;">
+            </input>
+            <div id="results"></div>
+        </form>
+        <script type="text/javascript">
+            var box = $(".boxmodel").boxModel();
+            function parseQuery(search) {
+		    var args = search.substring(1).split('&');
+		    var argsParsed = {};
+		    var i, arg, kvp, key, value;
+		    for (i=0; i < args.length; i++) {
+		        arg = args[i];
+		        if (-1 === arg.indexOf('=')) {
+		            argsParsed[decodeURI(arg).trim()] = true;
+		        }
+		        else {
+		            kvp = arg.split('=');
+		            key = decodeURI(kvp[0]).trim();
+		            value = decodeURI(kvp[1].replace(/\+/g, '%20')).trim();
+		            argsParsed[key] = value;
+		        }
+		    }
+		    return argsParsed;
+		}
+		var results = parseQuery(document.location.search);
+		for(i in results){
+			$("#results").append(i + " -> " + results[i] + "<br>");
+		}
+        </script>
+    </body>
 </html>

@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
-				"key",
-				"keyUpEvent"
+				"update",
+				"updateDimensions"
+			],
+			[
+				"top",
+				"topMargin〔variable〕"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"getPre",
+				"getPrecisionMultiplier"
 			],
 			[
 				"inpu",
@@ -142,10 +154,6 @@
 			[
 				"back",
 				"background"
-			],
-			[
-				"backgrou",
-				"background-position"
 			],
 			[
 				"pois",
@@ -506,14 +514,6 @@
 			[
 				"rectang",
 				"rectangleOptions"
-			],
-			[
-				"to",
-				"to_airport_location"
-			],
-			[
-				"from_",
-				"from_airport_location"
 			]
 		]
 	},
@@ -532,26 +532,26 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 477,
+				"buffer_size": 4594,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "<html>"
 			}
 		},
 		{
-			"file": "js/script.js",
+			"file": "css/style.scss",
 			"settings":
 			{
-				"buffer_size": 4574,
+				"buffer_size": 9430,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "css/style.scss",
+			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 1838,
+				"buffer_size": 11787,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -850,10 +850,16 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/taha.paksu/Desktop/trunk/boxmodel"
+		"/D/trunk/boxmodel",
+		"/D/trunk/boxmodel/build",
+		"/D/trunk/boxmodel/build/css",
+		"/D/trunk/boxmodel/build/js",
+		"/D/trunk/boxmodel/css",
+		"/D/trunk/boxmodel/js"
 	],
 	"file_history":
 	[
+		"/D/trunk/boxmodel/css/style.scss",
 		"/C/Users/taha.paksu/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
 		"/D/laragon/www/wordpress/wp-content/plugins/boxtured/plugin.php",
 		"/D/laragon/www/wordpress/wp-content/plugins/boxtured/views/admin.php",
@@ -980,8 +986,7 @@
 		"/C/laragon/www/wordpress/wp-content/themes/watcher/gulpfile.js",
 		"/C/laragon/data/mysql_error.log",
 		"/C/laragon/data/gezimap/venues.ibd",
-		"/C/laragon/data/gezimap/trip_day_places.ibd",
-		"/C/laragon/www/wordpress/wp-content/themes/watcher/assets/manifest.json"
+		"/C/laragon/data/gezimap/trip_day_places.ibd"
 	],
 	"find":
 	{
@@ -1024,10 +1029,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"<input type='text' name='(\\%NAME%_(.+)_\\w+)'>",
-			"<input type='text' name='(.+)'>",
-			"input type='number'",
-			"input type='text'",
+			"a4d419",
+			"-right",
+			"\" \\+ \"",
 			"wpColorPicker",
 			"<?php echo $boxtured_id;?>",
 			"echo $id;",
@@ -1151,18 +1155,19 @@
 			"map_segment_id",
 			"dd(",
 			"map_segment_id",
-			"logback"
+			"logback",
+			"createSegment"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
-			"<span class='boxmodel-input-container boxmodel-input-direction-\\2'><input type='text' name='\\1'></span>",
-			"<span class='boxmodel-input-container'><input type='text' name='\\1'></span>",
-			"input type='text'",
-			"input type='number'",
+			"ccff00",
+			" ccff00",
+			" ",
+			"\" +\\n \"",
 			"#<?php echo $boxtured_id;?>",
 			"echo $boxtured_id;",
 			"",
@@ -1297,7 +1302,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1337,15 +1342,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 477,
+						"buffer_size": 4594,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								444,
-								444
+								4381,
+								4381
 							]
 						],
 						"settings":
@@ -1355,27 +1360,57 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 966.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "js/script.js",
+					"file": "css/style.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4574,
+						"buffer_size": 9430,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4270,
-								4270
+								6621,
+								6621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2782.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7419,
+								7419
 							]
 						],
 						"settings":
@@ -1387,39 +1422,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "css/style.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1838,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								500
-							]
-						],
-						"settings":
-						{
-							"auto_indent": true,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
