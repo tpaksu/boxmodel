@@ -12,17 +12,38 @@
                 </script>
                 <style type="text/css">
                     body {
-					font-family: Consolas;
-					font-size: 12px;					
-				}
+						font-family: Consolas;
+						font-size: 12px;					
+					}
+					form {
+						padding: 0;
+						margin: 0;
+					}
+					.container {						
+						display: flex;						
+						flex-wrap: wrap;			
+					}
+					.container > div {
+						padding: 10px;
+					    margin: 10px;
+					    flex: 0 1 25%;
+					    display: flex;
+					    align-items: center;
+					    justify-content: center;
+					    flex-direction: column;				
+					}
+					div.dark {
+						background: black;
+						color: white;
+					}
                 </style>
             </link>
         </meta>
     </head>
     <body>
-        <form action="index.html" method="GET" style="width: 80%; margin: 0 auto;">
-            <div style="display: flex; flex-wrap: wrap;">
-                <div style="padding : 20px">
+        <form action="index.html" method="GET">
+            <div class="container">
+                <div>
                     <b>
                         Chrome Skin
                     </b>
@@ -31,7 +52,7 @@
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px">
+                <div>
                     <b>
                         Firebug Skin
                     </b>
@@ -40,7 +61,7 @@
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px">
+                <div>
                     <b>
                         IE Skin
                     </b>
@@ -49,7 +70,7 @@
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px">
+                <div>
                     <b>
                         Default Skin
                     </b>
@@ -58,7 +79,7 @@
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px;background: black; color: white;">
+                <div class="dark">
                     <b>
                         Dark Skin
                     </b>
@@ -67,7 +88,7 @@
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px;background: black; color: white;">
+                <div class="dark">
                     <b>
                         Neo Skin
                     </b>
@@ -76,28 +97,29 @@
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px;background: black; color: white;">
+                <div class="dark">
                     <b>
-                        Dyno Skin
+                        PPV Skin
                     </b>
                     <br>
-                        <div class="boxmodel boxmodel-dyno-skin" data-name="boxmodel-test-7">
+                        <div class="boxmodel boxmodel-ppv-skin" data-name="boxmodel-test-7">
                         </div>
                     </br>
                 </div>
-                <div style="padding : 20px;background: black; color: white;">
+                <div class="dark">
                     <b>
-                        Mod Skin
+                        Metal Skin
                     </b>
                     <br>
-                        <div class="boxmodel boxmodel-mod-skin" data-name="boxmodel-test-8">
+                        <div class="boxmodel boxmodel-metal-skin" data-name="boxmodel-test-8">
                         </div>
                     </br>
                 </div>
             </div>
-            <input type="submit" style="margin-top: 20px;">
+            <input style="margin-top: 20px;" type="submit">
             </input>
-            <div id="results"></div>
+            <div id="results">
+            </div>
         </form>
         <script type="text/javascript">
             var box = $(".boxmodel").boxModel();

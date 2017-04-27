@@ -11,7 +11,7 @@
     }
     span.boxmodel-text {
         font-size: 8.5px;
-        font-family: Verdana;
+        font-family: Verdana, Geneva, sans-serif;
         display: inline-block;
         user-select: none;
         &.boxmodel-header {
@@ -20,6 +20,18 @@
             left: 2px;
             color: #777;
         }
+    }
+    span.boxmodel-lock {
+        position: absolute;
+        bottom: 3px;
+	    right: 3px;
+	    width: 10px;
+	    height: 13px;
+	    user-select: none;
+	    cursor: pointer;
+	    &.boxmodel-locked {
+	    	color: red;
+	    }
     }
     .boxmodel-margin {
         background: #ffffff;
@@ -42,7 +54,7 @@
         margin: 0;
         border: 1px solid #aaa;
         position: relative;
-        font-family: Verdana;
+        font-family: Verdana, Geneva, sans-serif;
         font-size: 10px;
     }
     .flex-row {
@@ -61,7 +73,7 @@
         background: transparent;
         color: black;
         font-size: 9px;
-        font-family: Verdana;
+        font-family: Verdana, Geneva, sans-serif;
         box-shadow: none;
         border: 1px solid transparent;
         outline: none;
@@ -118,7 +130,7 @@
                 top: auto;
                 left: auto;
                 right: 2px;
-                bottom: 2px;
+                bottom: 0px;
             }
         }
         .boxmodel-margin {
@@ -191,32 +203,35 @@
     }
 }
 
-
 .boxmodel-dark-skin {
     .boxmodel-container {
         input, input:focus, input:active {
-            color: #eef;
+            color: #778;
+        }
+        input:focus, input:active {
+            background: #000;
+            border-color: #111;
         }
         span.boxmodel-text {
             &.boxmodel-header {
-                color: #eef;
+                color: #778;
             }
         }
         .boxmodel-margin {
             background: #000;
-            border: 1px dashed #eee;
+            border: 1px dashed #556;
         }
         .boxmodel-border {
-            background: #333;
-            border: 2px solid #eee;
+            background: #223;
+            border: 2px solid #667;
         }
         .boxmodel-padding {
-            background: #222;
-            border: 1px dashed #eee;
+            background: #112;
+            border: 1px dashed #556;
         }
         .boxmodel-content {
-            background: #000;
-            border: 1px solid #eee;
+            background: #001;
+            border: 1px solid #556;
             color: white;
         }
         .boxmodel-text {
@@ -272,7 +287,7 @@
     }
 }
 
-.boxmodel-dyno-skin {
+.boxmodel-ppv-skin {
     .boxmodel-container {
         input, input:focus, input:active {
             color: #eee;
@@ -284,20 +299,22 @@
         span.boxmodel-text {
             &.boxmodel-header {
                 color: #fff;
-                top: 3px;
-                left: 4px;
-                font-size: 7px;
+                top: 2px;
+                left: 3px;
+                font-size: 9px;
+                display: block;
+                text-shadow: 1px 1px 1px black;
             }
         }
         .boxmodel-margin {
             background: #21293A;
-            border: 1px solid #aaa;
+            border: 1px dashed #aaa;
             box-shadow: inset 0 0 20px 0px black;
             border-radius: 6px;
         }
         .boxmodel-border {
             background: #424252;
-            border: 1px solid #bbb;
+            border: 2px solid #bbb;
             border-radius: 6px;
             box-shadow: inset 0 0 20px 0px black;
         }
@@ -323,44 +340,57 @@
     }
 }
 
-.boxmodel-mod-skin {
+.boxmodel-metal-skin {
     .boxmodel-container {
         input, input:focus, input:active {
             color: #eee;
+            text-shadow: 0px 0px 2px black;
         }
         input:focus, input:active {
-            background: #000;
-            border-color: #ddd;
+            background: #ccc;
+            border-color: #777;
+            color: black;
+            text-shadow: 0px 0px 2px black;
         }
         span.boxmodel-text {
             &.boxmodel-header {
                 color: #ddd;
+                text-shadow: 0px 0px 2px black;
+                top: 2px;
+                left: 3px;
             }
         }
         .boxmodel-margin {
-            background: #444;
-            border: 1px solid #222;
+            //background: #444;
+            border: 2px solid #222;
             border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #222;
+            box-shadow: inset 0 0 1px 0 #222, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 200px -30px black;
+            &>span.boxmodel-text {
+                &.boxmodel-header {
+                    color: black;
+                    text-shadow: none;
+                }
+            }
         }
         .boxmodel-border {
-            background: #555;
-            border: 1px solid #222;
+            //background: #555;
+            border: 2px solid #222;
             border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777;
+            box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 200px -30px black;
         }
         .boxmodel-padding {
-            background: #666;
-            border: 1px solid #222;
+            //background: #666;
+            border: 2px solid #222;
             border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #222, 0 0 1px 0 #666;
+            box-shadow: inset 0 0 1px 0 #222, 0 0 1px 0 #666, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 150px -28px black;
         }
         .boxmodel-content {
-            background: #777;
-            border: 1px solid #222;
+            //background: #777;
+            text-shadow: 0px 0px 2px black;
+            border: 2px solid #222;
             color: #fff;
             border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777;            
+            box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 150px -50px black;
         }
         .boxmodel-text {
             color: #000;
@@ -370,4 +400,3 @@
         }
     }
 }
-
