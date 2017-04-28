@@ -7,8 +7,8 @@ module.exports = function(grunt) {
                 sourceMap: true
             },
             build: {
-                src: ['js/script.js'],
-                dest: 'build/js/script.min.js'
+                src: ['js/boxmodel.js'],
+                dest: 'build/js/boxmodel.min.js'
             }
         },
         sass: {
@@ -17,17 +17,17 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'build/css/style.min.css': 'css/style.scss'
+                    'build/css/boxmodel.min.css': 'css/boxmodel.scss'
                 }
             }
         },
         watch: {
             scripts: {
-                files: ['js/script.js'],
+                files: ['js/boxmodel.js'],
                 tasks: 'uglify'
             },
             styles: {
-                files: ['css/style.scss'],
+                files: ['css/boxmodel.scss'],
                 tasks: 'sass'
             },
             docs: {

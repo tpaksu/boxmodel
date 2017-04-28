@@ -1,5 +1,7 @@
 .boxmodel-container {
     display: inline-flex;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 12px;
     div:not(.flex-row) {
         box-sizing: border-box;
         display: flex;
@@ -29,6 +31,7 @@
 	    height: 13px;
 	    user-select: none;
 	    cursor: pointer;
+        color: #777;
 	    &.boxmodel-locked {
 	    	color: red;
 	    }
@@ -133,6 +136,12 @@
                 bottom: 0px;
             }
         }
+        span.boxmodel-lock {            
+            bottom: auto;
+            right: auto;    
+            top: 2px;
+            left: 2px;        
+        }
         .boxmodel-margin {
             background: #e3ca98;
             border: 1px dotted #bbddff;
@@ -203,6 +212,43 @@
     }
 }
 
+
+.boxmodel-rounded-skin {
+    .boxmodel-container {
+        input, input:focus, input:active {
+        }
+        input:focus, input:active {
+        }
+        span.boxmodel-text {
+            &.boxmodel-header {
+                top: 4px;
+                left: 4px;
+            }
+        }
+        span.boxmodel-lock {            
+            bottom: 6px;
+            right: 8px; 
+            color: #555;           
+        }
+        .boxmodel-margin {
+            border-radius: 12px;
+        }
+        .boxmodel-border {
+            border-radius: 12px;
+        }
+        .boxmodel-padding {
+            border-radius: 12px;
+        }
+        .boxmodel-content {
+            border-radius: 12px;
+        }
+        .boxmodel-text {
+            &.boxmodel-header {
+            }
+        }
+    }
+}
+
 .boxmodel-dark-skin {
     .boxmodel-container {
         input, input:focus, input:active {
@@ -215,6 +261,12 @@
         span.boxmodel-text {
             &.boxmodel-header {
                 color: #778;
+            }
+        }
+        span.boxmodel-lock {            
+            color: #778;
+            &.boxmodel-locked {
+                color: white;
             }
         }
         .boxmodel-margin {
@@ -257,6 +309,12 @@
                 color: #ccff00;
             }
         }
+        span.boxmodel-lock {            
+            color: #ccff00;
+            &.boxmodel-locked {
+                color: white;
+            }
+        }
         .boxmodel-margin {
             background: #000;
             border: 1px dashed #ccff00;
@@ -287,7 +345,7 @@
     }
 }
 
-.boxmodel-ppv-skin {
+.boxmodel-perspective-skin {
     .boxmodel-container {
         input, input:focus, input:active {
             color: #eee;
@@ -305,6 +363,11 @@
                 display: block;
                 text-shadow: 1px 1px 1px black;
             }
+        }
+        span.boxmodel-lock {   
+            bottom: 5px;
+            right: 5px;         
+            text-shadow: 1px 1px 1px black;
         }
         .boxmodel-margin {
             background: #21293A;
@@ -358,6 +421,15 @@
                 text-shadow: 0px 0px 2px black;
                 top: 2px;
                 left: 3px;
+            }
+        }
+        span.boxmodel-lock {   
+            bottom: 5px;
+            right: 5px;         
+            text-shadow: 0px 0px 1px white;
+            color: #333;
+            &.boxmodel-locked {
+                color: #fff;
             }
         }
         .boxmodel-margin {

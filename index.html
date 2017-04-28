@@ -5,15 +5,15 @@
             Box Model Input
         </title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-            <link href="build/css/style.min.css" rel="stylesheet" type="text/css">
+            <link href="build/css/boxmodel.min.css" rel="stylesheet" type="text/css">
                 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
                 </script>
-                <script src="build/js/script.min.js" type="text/javascript">
+                <script src="build/js/boxmodel.min.js" type="text/javascript">
                 </script>
                 <style type="text/css">
                     body {
 						font-family: Consolas;
-						font-size: 12px;					
+						font-size: 12px;text-align: center;					
 					}
 					form {
 						padding: 0;
@@ -22,18 +22,21 @@
 					.container {						
 						display: flex;						
 						flex-wrap: wrap;			
+						align-items: center;
+						justify-content: center;
 					}
 					.container > div {
-						padding: 10px;
+						padding: 40px 10px;
 					    margin: 10px;
 					    flex: 0 1 25%;
 					    display: flex;
 					    align-items: center;
 					    justify-content: center;
-					    flex-direction: column;				
+					    flex-direction: column;		
+					    background: #eee;		
 					}
 					div.dark {
-						background: black;
+						background: #111;
 						color: white;
 					}
                 </style>
@@ -79,12 +82,21 @@
                         </div>
                     </br>
                 </div>
+                <div>
+                    <b>
+                        Rounded Skin
+                    </b>
+                    <br>
+                        <div class="boxmodel boxmodel-rounded-skin" data-name="boxmodel-test-5">
+                        </div>
+                    </br>
+                </div>
                 <div class="dark">
                     <b>
                         Dark Skin
                     </b>
                     <br>
-                        <div class="boxmodel boxmodel-dark-skin" data-name="boxmodel-test-5">
+                        <div class="boxmodel boxmodel-dark-skin" data-name="boxmodel-test-6">
                         </div>
                     </br>
                 </div>
@@ -93,16 +105,16 @@
                         Neo Skin
                     </b>
                     <br>
-                        <div class="boxmodel boxmodel-neo-skin" data-name="boxmodel-test-6">
+                        <div class="boxmodel boxmodel-neo-skin" data-name="boxmodel-test-7">
                         </div>
                     </br>
                 </div>
                 <div class="dark">
                     <b>
-                        PPV Skin
+                        Perspective Skin
                     </b>
                     <br>
-                        <div class="boxmodel boxmodel-ppv-skin" data-name="boxmodel-test-7">
+                        <div class="boxmodel boxmodel-perspective-skin" data-name="boxmodel-test-8">
                         </div>
                     </br>
                 </div>
@@ -111,7 +123,7 @@
                         Metal Skin
                     </b>
                     <br>
-                        <div class="boxmodel boxmodel-metal-skin" data-name="boxmodel-test-8">
+                        <div class="boxmodel boxmodel-metal-skin" data-name="boxmodel-test-9">
                         </div>
                     </br>
                 </div>

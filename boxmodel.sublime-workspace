@@ -4,16 +4,36 @@
 		"selected_items":
 		[
 			[
-				"input",
-				"inputName"
+				"paddin",
+				"paddings"
 			],
 			[
-				"margi",
-				"marginLabel"
+				"enable",
+				"enableBorder"
 			],
 			[
-				"key",
-				"keyUpEvent"
+				"enab",
+				"enableMargin"
+			],
+			[
+				"op",
+				"options"
+			],
+			[
+				"update",
+				"updateDimensions"
+			],
+			[
+				"top",
+				"topMargin〔variable〕"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"getPre",
+				"getPrecisionMultiplier"
 			],
 			[
 				"inpu",
@@ -150,10 +170,6 @@
 			[
 				"back",
 				"background"
-			],
-			[
-				"backgrou",
-				"background-position"
 			],
 			[
 				"pois",
@@ -498,22 +514,6 @@
 			[
 				"proto",
 				"prototype"
-			],
-			[
-				"marke",
-				"markerOptions"
-			],
-			[
-				"prot",
-				"prototype"
-			],
-			[
-				"Sche",
-				"Schema::create-table\tCreate new table"
-			],
-			[
-				"rectang",
-				"rectangleOptions"
 			]
 		]
 	},
@@ -532,37 +532,46 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4720,
+				"buffer_size": 5159,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "<html>"
 			}
 		},
 		{
-			"file": "js/script.js",
+			"file": "css/boxmodel.scss",
 			"settings":
 			{
-				"buffer_size": 12405,
+				"buffer_size": 12474,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "css/style.scss",
+			"file": "js/boxmodel.js",
 			"settings":
 			{
-				"buffer_size": 10722,
+				"buffer_size": 21075,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/taha.paksu/Downloads/icon.svg",
+			"file": "documentation.md",
 			"settings":
 			{
-				"buffer_size": 1425,
+				"buffer_size": 20246,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 1724,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -859,10 +868,18 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/taha.paksu/Desktop/trunk/boxmodel"
+		"/D/trunk/boxmodel",
+		"/D/trunk/boxmodel/build/css",
+		"/D/trunk/boxmodel/build/js",
+		"/D/trunk/boxmodel/docs",
+		"/D/trunk/boxmodel/docs/includes"
 	],
 	"file_history":
 	[
+		"/D/trunk/boxmodel/docs/includes/template.html",
+		"/D/trunk/caleran/readme.md",
+		"/D/trunk/boxmodel/docs/documentation.html",
+		"/D/trunk/boxmodel/css/style.scss",
 		"/C/Users/taha.paksu/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
 		"/D/laragon/www/wordpress/wp-content/plugins/boxtured/plugin.php",
 		"/D/laragon/www/wordpress/wp-content/plugins/boxtured/views/admin.php",
@@ -986,11 +1003,7 @@
 		"/C/laragon/www/gezimap/toolbox/start_global_queue.sh",
 		"/C/laragon/www/gezimap/storage/logs/laravel-2017-03-25.log",
 		"/C/laragon/www/gezimap/toolbox/prepare_win.sh",
-		"/C/laragon/www/wordpress/wp-content/themes/watcher/gulpfile.js",
-		"/C/laragon/data/mysql_error.log",
-		"/C/laragon/data/gezimap/venues.ibd",
-		"/C/laragon/data/gezimap/trip_day_places.ibd",
-		"/C/laragon/www/wordpress/wp-content/themes/watcher/assets/manifest.json"
+		"/C/laragon/www/wordpress/wp-content/themes/watcher/gulpfile.js"
 	],
 	"find":
 	{
@@ -1030,20 +1043,24 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
-			"console.log(.+);",
-			"console.log(output);",
-			"Verdana",
-			"<input type='checkbox'>",
-			"</br>",
-			" style=\"padding : 20px;background: black; color: white;\"",
-			" style=\"padding : 20px\"",
-			"<input type='text' name='(\\%NAME%_(.+)_\\w+)'>",
-			"<input type='text' name='(.+)'>",
-			"input type='number'",
-			"input type='text'",
+			"Object",
+			"```javascript",
+			"8",
+			"9",
+			"8",
+			"Neo",
+			"7",
+			"6",
+			").boxmodel",
+			"caleran",
+			"ppv",
+			"border",
+			"a4d419",
+			"-right",
+			"\" \\+ \"",
 			"wpColorPicker",
 			"<?php echo $boxtured_id;?>",
 			"echo $id;",
@@ -1156,25 +1173,31 @@
 			"icon",
 			"getExistingSegments",
 			"checkForUpdates",
-			"::incrementValue",
-			"incrementValue",
-			"increment(\"google",
-			"increment(\"foursquare",
-			"nearby"
+			"::incrementValue"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
-			"",
-			"Verdana, Geneva, sans-serif",
-			"",
-			"<span class='boxmodel-input-container boxmodel-input-direction-\\2'><input type='text' name='\\1'></span>",
-			"<span class='boxmodel-input-container'><input type='text' name='\\1'></span>",
-			"input type='text'",
-			"input type='number'",
+			"object",
+			"```html",
+			"9",
+			"8",
+			"7",
+			"Perspective",
+			"8",
+			"7",
+			").boxModel",
+			"boxmodel",
+			"perspective",
+			"margin",
+			"padding",
+			"ccff00",
+			" ccff00",
+			" ",
+			"\" +\\n \"",
 			"#<?php echo $boxtured_id;?>",
 			"echo $boxtured_id;",
 			"",
@@ -1285,17 +1308,7 @@
 			"0x\\1,",
 			",",
 			"0x\\1,",
-			",",
-			"0x\\1,",
-			",",
-			"\\n",
-			"\\1 ",
-			"",
-			"sparkline",
-			"tahapaksu",
-			"rel=\"stylesheet\" type=\"text/css\"",
-			"content-sidebar",
-			""
+			","
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1306,7 +1319,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1337,7 +1350,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1346,46 +1359,75 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4720,
+						"buffer_size": 5159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1143,
-								1143
+								584,
+								628
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"auto_indent": true,
 							"auto_name": "<html>",
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 206.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/boxmodel.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10895,
+								10895
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5631.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "js/script.js",
+					"buffer": 3,
+					"file": "js/boxmodel.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12405,
+						"buffer_size": 21075,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11231,
-								11231
+								18108,
+								18108
 							]
 						],
 						"settings":
@@ -1397,62 +1439,64 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2594.0,
+						"translation.y": 3867.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "documentation.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11495,
+								11495
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4021.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "css/style.scss",
+					"buffer": 5,
+					"file": "Gruntfile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10722,
+						"buffer_size": 1724,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								789,
-								789
+								210,
+								210
 							]
 						],
 						"settings":
 						{
-							"auto_indent": true,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/taha.paksu/Downloads/icon.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1425,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								139,
-								1424
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
