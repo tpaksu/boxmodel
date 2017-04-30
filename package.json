@@ -1,7 +1,7 @@
 {
   "name": "boxmodel",
   "description": "A dimensions input generator using jQuery",
-  "repository": "http://www.github.com/tpaksu/grunstrap",
+  "repository": "tahapaksu.com",
   "license": "MIT",
   "version": "1.0.0",
   "devDependencies": {

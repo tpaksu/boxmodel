@@ -70,20 +70,21 @@ For example,
 
 These are the options you can set with the javascript plugin initialization object, or with the `data-plugin-options` html attribute on the input element, or within the events by directly modifying the `boxmodel.options` object.
 
-- `inputName` [string]: The input name which will be prepended to the inputs. For example, if this property is set to **my_box**, the left margin input will be posted as **my_box_left_margin**. Can also be set with `data-name` html attribute on the container element. No default.
-- `autoText` [string]: the string that'll be displayed on empty inputs, the values of it will be posted as __"auto"__. Default: `"-"`
-- `enabledUnits` [array]: allowed units definition. Default: `[ "px", "pt", "em", "rem", "vh", "vw", "vmin", "vmax", "%", "cm" and "mm" ]`
-- `usePrecision` [boolean]: If you want the up/down buttons (and mousewheel) to increase using the minimum precision in the input, this needs to be true. Else, the inputs will increase/decrease by 1 unit. Default: `true`
-- `enableMargin` [boolean]: if you want to disable margin box and inputs, set this to false. Default: `true`
-- `enablePadding` [boolean]: if you want to disable padding box and inputs, set this to false. Default: `true`
-- `enableBorder` [boolean]: if you want to disable border box and inputs, set this to false. Default: `true`
-- `enableDimensions` [boolean]: if you want to disable width and height inputs, set this to false. Default: `true`
-- `marginLabel` [string]: the label which is displayed inside the margin box. Default: `Margin`
-- `paddingLabel` [string]: the label which is displayed inside the padding box. Default: `Padding`
-- `borderLabel` [string]: the label which is displayed inside the border box. Default: `Border`
-- `dimensionLabel` [string]: the text that'll be displayed in between the width and height inputs if enableDimensions is set to true. Default: `x`
-- `onInit` [function]: the method that runs on successful plugin initialization. Default: `function() { }`
-- `values` [object]: the initial values for the plugin. Default: `null`
+- `inputName` [string]: The input name which will be prepended to the inputs. For example, if this property is set to **my_box**, the left margin input will be posted as **my_box_left_margin**. Can also be set with `data-name` html attribute on the container element. No default.<br><br>
+- `autoText` [string]: the string that'll be displayed on empty inputs, the values of it will be posted as __"auto"__. Default: `"-"`<br><br>
+- `enabledUnits` [array]: allowed units definition. Default: `[ "px", "pt", "em", "rem", "vh", "vw", "vmin", "vmax", "%", "cm" and "mm" ]`<br><br>
+- `defaultUnit` [string]: unit to use when no enabled unit matches the value given. Default: `px`<br><br>
+- `usePrecision` [boolean]: If you want the up/down buttons (and mousewheel) to increase using the minimum precision in the input, this needs to be true. Else, the inputs will increase/decrease by 1 unit. Default: `true`<br><br>
+- `enableMargin` [boolean]: if you want to disable margin box and inputs, set this to false. Default: `true`<br><br>
+- `enablePadding` [boolean]: if you want to disable padding box and inputs, set this to false. Default: `true`<br><br>
+- `enableBorder` [boolean]: if you want to disable border box and inputs, set this to false. Default: `true`<br><br>
+- `enableDimensions` [boolean]: if you want to disable width and height inputs, set this to false. Default: `true`<br><br>
+- `marginLabel` [string]: the label which is displayed inside the margin box. Default: `Margin`<br><br>
+- `paddingLabel` [string]: the label which is displayed inside the padding box. Default: `Padding`<br><br>
+- `borderLabel` [string]: the label which is displayed inside the border box. Default: `Border`<br><br>
+- `dimensionLabel` [string]: the text that'll be displayed in between the width and height inputs if enableDimensions is set to true. Default: `x`<br><br>
+- `onInit` [function]: the method that runs on successful plugin initialization. Default: `function() { }`<br><br>
+- `values` [object]: the initial values for the plugin. Default: `null`<br><br>
     <br>**example structure:**
     ```javascript
     var initialValues = { margin: "0px 1px 0px 1px", padding: "0px 0px 0px 2px", border: "0 .2em .3em 0"};
@@ -113,7 +114,7 @@ These are the options you can set with the javascript plugin initialization obje
 		// 			 value   -> the input value
 		//			  all	 -> all input values on the plugin as an object
 
-	```
+	```<br><br>
 
 - `boxmodel:blur` [event handler]:  event which is triggered after when an input loses focus on the container. Attached to the container element itself.
 
@@ -126,7 +127,7 @@ These are the options you can set with the javascript plugin initialization obje
 		// parameters : element -> the input which triggered the change event
 		// 			 value   -> the input value
 		//			  all	 -> all input values on the plugin as an object
-	```
+	```<br><br>
 - `boxmodel:keyup` [event handler]:  event which is triggered after when an input had a key pressed on the container. Attached to the container element itself.
 
     **Prototype:**
@@ -139,7 +140,7 @@ These are the options you can set with the javascript plugin initialization obje
 		//				 element  -> the input which triggered the change event
 		// 				value	-> the input value
 		//				 all	  -> all input values on the plugin as an object
-	```
+	```<br><br>
 - `boxmodel:error` [event handler]:  event which is triggered after when an user input triggered a validation error on the container. Attached to the container element itself.
 
     **Prototype:**
@@ -159,7 +160,7 @@ These are the options you can set with the javascript plugin initialization obje
 ## Methods
 
 - `getAllProperties` [function]: Gets all the inputs as an object.
-
+<br><br>
 - `setValue` [function]: Sets a specific value, returns `false` if validation `fails`, does nothing and returns `true` when the related input doesn't exist.
 <br>**Prototype:**
 ```javascript
@@ -171,6 +172,7 @@ These are the options you can set with the javascript plugin initialization obje
 	boxmodel.setValue("top","margin","5px");
 	boxmodel.setValue(null, "width", "250px");
 ```
+<br><br>
 - `setBorders` [function]: Sets all borders to a specific value, returns `false` if validation fails, does nothing and returns `true` when `enableBorder` is set to `false`.
 <br>**Prototype:**
 ```javascript
@@ -179,6 +181,7 @@ These are the options you can set with the javascript plugin initialization obje
 	//	string value
 	boxmodel.setBorders("1px");
 ```
+<br><br>
 - `setPaddings` [function]: Sets all paddings to a specific value, returns `false` if validation fails, does nothing and returns `true` when `enablePadding` is set to `false`.
 <br>**Prototype:**
 ```javascript
@@ -187,6 +190,7 @@ These are the options you can set with the javascript plugin initialization obje
 	//	string value
 	boxmodel.setPaddings("8px");
 ```
+<br><br>
 - `setMargins` [function]: Sets all borders to a specific value, returns `false` if validation fails, does nothing and returns `true` when `enableMargin` is set to `false`.
 <br>**Prototype:**
 ```javascript
@@ -195,6 +199,7 @@ These are the options you can set with the javascript plugin initialization obje
 	//	string value
 	boxmodel.setMargins("3px");
 ```
+<br><br>
 - `setWidth` [function]: Sets the width input, returns `false` if validation `fails`, does nothing and returns `true when `enableDimensions` is set to `false`.
 <br>**Prototype:**
 ```javascript
@@ -203,6 +208,7 @@ These are the options you can set with the javascript plugin initialization obje
 	//	string value
 	boxmodel.setWidth("250px");
 ```
+<br><br>
 - `setHeight` [function]: Sets the height input, returns `false` if validation `fails`, does nothing and returns `true` when `enableDimensions` is set to `false`.
 <br>**Prototype:**
 ```javascript
@@ -244,7 +250,8 @@ Add `data-name` property to the container div, and call `.boxModel()` on the con
 <br>
 <br>
 
-### Set Initial Values (Object)
+### Setting Initial Values
+#### Initialization Object
 ---
 Showing how to implement initialization with object.
 <br>
@@ -296,8 +303,131 @@ Showing how to implement initialization with object.
 <br>
 <br>
 
+#### Incomplete Object Values
+---
+Showing how to implement initialization using an object with undefined values.
+<br>
+<br>
+**Preview**
 
-### Set Initial Values (String)
+<div class="well well-sm" style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+<div id="boxmodel-ex-1-4" data-name="boxmodel-ex-1-4"></div>
+</div>
+<script type="text/javascript">$("#boxmodel-ex-1-4").boxModel({
+        values: {
+          margins: {
+            top: "1px",
+            left: "2px"            
+          },
+          paddings: {            
+            bottom: "4px"
+          },
+          borders: {
+            left: "2px",
+            bottom: "4px"
+          },
+          dimensions: {
+            height: "250px"
+          }
+        }});</script>
+
+  HTML:
+  ```html
+    <div id="boxmodel-ex-1-4" data-name="boxmodel-ex-1-4"></div>
+  ```
+
+  JavaScript:
+  ```html
+    <script type="text/javascript">
+      $("#boxmodel-ex-1-4").boxModel({
+        values: {
+          margins: {
+            top: "1px",
+            left: "2px"            
+          },
+          paddings: {            
+            bottom: "4px"
+          },
+          borders: {
+            left: "2px",
+            bottom: "4px"
+          },
+          dimensions: {
+            height: "250px"
+          }
+        }
+      });
+    </script>
+  ```
+<br>
+<br>
+<br>
+
+#### Invalid Object Values
+---
+Showing how to implement initialization using an object with invalid values.
+<br>
+<br>
+**Preview**
+
+<div class="well well-sm" style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+<div id="boxmodel-ex-1-5" data-name="boxmodel-ex-1-5"></div>
+</div>
+<script type="text/javascript">$("#boxmodel-ex-1-5").boxModel({
+        values: {
+          margins: {
+            top: "1px",
+            left: "2py"            
+          },
+          paddings: {   
+            top: "1px",
+            bottom: "4"            
+          },
+          borders: {
+            leftx: "2px",
+            bottom: "4px"
+          },
+          dimensions: {
+            height: "250$",
+            width: "100%"
+          }
+        }});</script>
+
+  HTML:
+  ```html
+    <div id="boxmodel-ex-1-5" data-name="boxmodel-ex-1-5"></div>
+  ```
+
+  JavaScript:
+  ```html
+    <script type="text/javascript">
+      $("#boxmodel-ex-1-5").boxModel({
+        values: {
+          margins: {
+            top: "1px",
+            left: "2py"            
+          },
+          paddings: {   
+            top: "1px",
+            bottom: "4"            
+          },
+          borders: {
+            leftx: "2px",
+            bottom: "4px"
+          },
+          dimensions: {
+            height: "250$",
+            width: "100%"
+          }
+        }
+      });
+    </script>
+  ```
+<br>
+<br>
+<br>
+
+#### Object With CSS Strings
 ---
 Showing how to implement initialization with object.
 <br>
@@ -334,7 +464,97 @@ Showing how to implement initialization with object.
 <br>
 <br>
 
-### Chrome Skin
+#### Optimized CSS Strings
+---
+Showing how to implement initialization with shortened css strings.
+<br>
+<br>
+**Preview**
+
+<div class="well well-sm" style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+<div id="boxmodel-ex-1-3" data-name="boxmodel-ex-1-3"></div>
+</div>
+<script type="text/javascript">$("#boxmodel-ex-1-3").boxModel({values: {
+          margins: "5px auto",
+          paddings: "1px 2px 1px",
+          borders: "1px auto 3px",
+          dimensions: {
+            width: "150px"
+          }
+        }});</script>
+
+  HTML:
+  ```html
+    <div id="boxmodel-ex-1-3" data-name="boxmodel-ex-1-3"></div>
+  ```
+
+  JavaScript:
+  ```html
+    <script type="text/javascript">
+      $("#boxmodel-ex-1-3").boxModel({
+        values: {
+          margins: "5px auto",
+          paddings: "1px 2px 1px",
+          borders: "1px auto 3px",
+          dimensions: {
+            width: "150px"
+          }
+        }
+      });
+    </script>
+  ```
+<br>
+<br>
+<br>
+
+
+#### Invalid CSS Strings
+---
+Showing how to implement initialization with shortened css strings.
+<br>
+<br>
+**Preview**
+
+<div class="well well-sm" style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+<div id="boxmodel-ex-1-6" data-name="boxmodel-ex-1-6"></div>
+</div>
+<script type="text/javascript">$("#boxmodel-ex-1-6").boxModel({ 
+        values: {
+          margins: "john doe 25ipx",
+          paddings: "1em 2rem 3pem",
+          borders: "1px oto 3px",
+          dimensions: {
+            width: "720p"
+          }
+        }});</script>
+
+  HTML:
+  ```html
+    <div id="boxmodel-ex-1-6" data-name="boxmodel-ex-1-6"></div>
+  ```
+
+  JavaScript:
+  ```html
+    <script type="text/javascript">
+      $("#boxmodel-ex-1-6").boxModel({
+        values: {
+          margins: "john doe 25ipx",
+          paddings: "1em 2rem 3pem",
+          borders: "1px oto 3px",
+          dimensions: {
+            width: "720p"
+          }
+        }
+      });
+    </script>
+  ```
+<br>
+<br>
+<br>
+
+
+### Skins
+#### Chrome Skin
 ---
 Just add `boxmodel-chrome-skin` to the container object and the skin will be applied.
 <br>
@@ -361,7 +581,7 @@ Just add `boxmodel-chrome-skin` to the container object and the skin will be app
 <br>
 <br>
 
-### FireBug Skin
+#### FireBug Skin
 ---
 Just add `boxmodel-firebug-skin` to the container object and the skin will be applied.
 <br>
@@ -388,7 +608,7 @@ Just add `boxmodel-firebug-skin` to the container object and the skin will be ap
 <br>
 <br>
 
-### IE Skin
+#### IE Skin
 ---
 Just add `boxmodel-ie-skin` to the container object and the skin will be applied.
 <br>
@@ -415,7 +635,7 @@ Just add `boxmodel-ie-skin` to the container object and the skin will be applied
 <br>
 <br>
 
-### Rounded Skin
+#### Rounded Skin
 ---
 Just add `boxmodel-rounded-skin` to the container object and the skin will be applied.
 <br>
@@ -442,7 +662,7 @@ Just add `boxmodel-rounded-skin` to the container object and the skin will be ap
 <br>
 <br>
 
-### Dark Skin
+#### Dark Skin
 ---
 Just add `boxmodel-dark-skin` to the container object and the skin will be applied.
 <br>
@@ -469,7 +689,7 @@ Just add `boxmodel-dark-skin` to the container object and the skin will be appli
 <br>
 <br>
 
-### Neo Skin
+#### Neo Skin
 ---
 Just add `boxmodel-neo-skin` to the container object and the skin will be applied.
 <br>
@@ -497,7 +717,7 @@ Just add `boxmodel-neo-skin` to the container object and the skin will be applie
 <br>
 
 
-### Perspective Skin
+#### Perspective Skin
 ---
 Just add `boxmodel-perspective-skin` to the container object and the skin will be applied.
 <br>
@@ -525,7 +745,7 @@ Just add `boxmodel-perspective-skin` to the container object and the skin will b
 <br>
 
 
-### Metal Skin
+#### Metal Skin
 ---
 Just add `boxmodel-metal-skin` to the container object and the skin will be applied.
 <br>

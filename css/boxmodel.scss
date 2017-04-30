@@ -83,8 +83,8 @@
         user-select: none;
         margin: 0px;
         padding: 1px;
-        text-align: center;
-        &:focus, &:active {
+        text-align: center;                
+        &:focus, &:active {            
             border: 1px solid #eee;
             background: white;
         }
