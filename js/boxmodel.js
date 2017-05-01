@@ -287,7 +287,7 @@
             if ( name.indexOf( "margin" ) > 0 ) this.updateMarginCombined( elem );
             else if ( name.indexOf( "padding" ) > 0 ) this.updatePaddingCombined( elem );
             else if ( name.indexOf( "border" ) > 0 ) this.updateBorderCombined( elem );
-            else if ( name.indexOf( "width" ) > 0 || name.indexOf( "height" ) > 0 ) this.updateDimensions();
+            else if ( name.indexOf( "width" ) > 0 || name.indexOf( "height" ) > 0 ) this.updateDimensionsCombined();
             this.$element.trigger( "boxmodel:change", [ elem, elem.val(), this.getAllProperties() ] );
         },
         /**

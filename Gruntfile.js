@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['js/boxmodel.js'],
-                tasks: 'uglify'
+                tasks: ['uglify','obfuscator']
             },
             styles: {
                 files: ['css/boxmodel.scss'],
@@ -49,12 +49,18 @@ module.exports = function(grunt) {
 		    autoTemplateFormat: 'html'
                 }
             }
+        },
+        jsObfuscate: {
+            default: {
+                files: { 'build/js/boxmodel.obf.js' : 'build/js/boxmodel.min.js' }            
+            }            
         }
     });
     grunt.loadNpmTasks('grunt-markdown');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('min', ['uglify', 'sass', 'markdown']);
-    grunt.registerTask('default', ['uglify', 'sass', 'markdown']);
+    grunt.loadNpmTasks('js-obfuscator');
+    grunt.registerTask('min', ['uglify', 'jsObfuscate', 'sass', 'markdown']);
+    grunt.registerTask('default', ['uglify', 'jsObfuscate', 'sass', 'markdown']);
 };
