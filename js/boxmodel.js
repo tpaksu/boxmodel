@@ -212,12 +212,14 @@
          */
         lockEvent: function( event ) {
             var elem = $( event.target );
+            if(!elem.hasClass("boxmodel-lock")) elem = elem.closest(".boxmodel-lock");
             elem.toggleClass( "boxmodel-locked" );
             if ( elem.hasClass( "boxmodel-locked" ) ) {
                 elem.html( "&#x1f512;" );
             } else {
                 elem.html( "&#128275;" );
             }
+            event.preventDefault();        
         },
         /**
          * event handler for input key up event
