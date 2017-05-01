@@ -18,6 +18,11 @@
  * ------
  * - released first version
  *
+ * v1.0.1
+ * ------
+ * - fixed: lock button behaviour on child event
+ * - fixed: initial values doesn't update combined inputs
+ *
  * Usage:
  * ------
  * $(".selector").boxModel({options});
@@ -127,6 +132,10 @@
                     if ( dimensions.hasOwnProperty( "height" ) ) this.setValue( null, "height", dimensions.height );
                 }
             }
+            this.updateMarginCombined();
+            this.updateBorderCombined();
+            this.updatePaddingCombined();
+            this.updateDimensionsCombined();
         },
         /**
          * If the user provided string CSS instead of an object, this will parse the string and convert the values to a validated object
