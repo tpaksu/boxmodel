@@ -22,6 +22,7 @@
  * ------
  * - fixed: lock button behaviour on child event
  * - fixed: initial values doesn't update combined inputs
+ * - fixed: changed initial values from auto to initial
  *
  * Usage:
  * ------
@@ -35,7 +36,8 @@
      */
     var defaults = {
         inputName: null,
-        autoText: "-",
+        emptyText: "-",
+        autoText: "auto",
         enabledUnits: [ "px", "pt", "em", "rem", "vh", "vw", "vmin", "vmax", "%", "cm", "mm" ],
         defaultUnit: "px",
         usePrecision: true,
@@ -75,12 +77,12 @@
          * @return none
          */
         init: function() {
-            var template = "<div class='boxmodel-container'>" + ( ( this.options.enableMargin ) ? "<div class='boxmodel-margin'><span class='boxmodel-text boxmodel-header'>" + this.options.marginLabel + "</span><span class='boxmodel-lock boxmodel-lock-margin'>&#128275;</span>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-left'><input type='text' name='%NAME%_left_margin'></span>" : "" ) + ( ( this.options.enableMargin ) ? "<div class='flex-row'>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-top'><input type='text' name='%NAME%_top_margin'></span>" : "" ) + ( ( this.options.enableBorder ) ? "<div class='boxmodel-border'><span class='boxmodel-text boxmodel-header'>" + this.options.borderLabel + "</span><span class='boxmodel-lock boxmodel-lock-border'>&#128275;</span>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-left'><input type='text' name='%NAME%_left_border'></span>" : "" ) + ( ( this.options.enableBorder ) ? "<div class='flex-row'>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-top'><input type='text' name='%NAME%_top_border'></span>" : "" ) + ( ( this.options.enablePadding ) ? "<div class='boxmodel-padding'><span class='boxmodel-text boxmodel-header'>" + this.options.paddingLabel + "</span><span class='boxmodel-lock boxmodel-lock-padding'>&#128275;</span>" : "" ) + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-left'><input type='text' name='%NAME%_left_padding'></span>" : "" ) + ( ( this.options.enablePadding ) ? "<div class='flex-row'>" : "" ) + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-top'><input type='text' name='%NAME%_top_padding'></span>" : "" ) + "<div class='boxmodel-content'>" + ( ( this.options.enableDimensions ) ? "<input type='text' name='%NAME%_width'>" + this.options.dimensionLabel + "<input type='text' name='%NAME%_height'>" : "" ) + "</div>" + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-bottom'><input type='text' name='%NAME%_bottom_padding'></span>" : "" ) + ( ( this.options.enablePadding ) ? "</div>" : "" ) + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-right'><input type='text' name='%NAME%_right_padding'></span>" : "" ) + ( ( this.options.enablePadding ) ? "</div>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-bottom'><input type='text' name='%NAME%_bottom_border'></span>" : "" ) + ( ( this.options.enableBorder ) ? "</div>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-right'><input type='text' name='%NAME%_right_border'></span>" : "" ) + ( ( this.options.enableBorder ) ? "</div>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-bottom'><input type='text' name='%NAME%_bottom_margin'></span>" : "" ) + ( ( this.options.enableMargin ) ? "</div>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-right'><input type='text' name='%NAME%_right_margin'></span>" : "" ) + ( ( this.options.enableMargin ) ? "</div>" : "" ) + "<input type='hidden' name='%NAME%_auto_text'>" + ( ( this.options.enableMargin ) ? "<input type='hidden' name='%NAME%_margin'>" : "" ) + ( ( this.options.enablePadding ) ? "<input type='hidden' name='%NAME%_padding'>" : "" ) + ( ( this.options.enableBorder ) ? "<input type='hidden' name='%NAME%_border'>" : "" ) + ( ( this.options.enableDimensions ) ? "<input type='hidden' name='%NAME%_dimensions'>" : "" ) + "</div>";
+            var template = "<div class='boxmodel-container'>" + ( ( this.options.enableMargin ) ? "<div class='boxmodel-margin'><span class='boxmodel-text boxmodel-header'>" + this.options.marginLabel + "</span><span class='boxmodel-lock boxmodel-lock-margin'>&#128275;</span>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-left'><input type='text' autocomplete='off' name='%NAME%_left_margin'></span>" : "" ) + ( ( this.options.enableMargin ) ? "<div class='flex-row'>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-top'><input type='text' autocomplete='off' name='%NAME%_top_margin'></span>" : "" ) + ( ( this.options.enableBorder ) ? "<div class='boxmodel-border'><span class='boxmodel-text boxmodel-header'>" + this.options.borderLabel + "</span><span class='boxmodel-lock boxmodel-lock-border'>&#128275;</span>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-left'><input type='text' autocomplete='off' name='%NAME%_left_border'></span>" : "" ) + ( ( this.options.enableBorder ) ? "<div class='flex-row'>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-top'><input type='text' autocomplete='off' name='%NAME%_top_border'></span>" : "" ) + ( ( this.options.enablePadding ) ? "<div class='boxmodel-padding'><span class='boxmodel-text boxmodel-header'>" + this.options.paddingLabel + "</span><span class='boxmodel-lock boxmodel-lock-padding'>&#128275;</span>" : "" ) + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-left'><input type='text' autocomplete='off' name='%NAME%_left_padding'></span>" : "" ) + ( ( this.options.enablePadding ) ? "<div class='flex-row'>" : "" ) + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-top'><input type='text' autocomplete='off' name='%NAME%_top_padding'></span>" : "" ) + "<div class='boxmodel-content'>" + ( ( this.options.enableDimensions ) ? "<input type='text' autocomplete='off' name='%NAME%_width'>" + this.options.dimensionLabel + "<input type='text' autocomplete='off' name='%NAME%_height'>" : "" ) + "</div>" + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-bottom'><input type='text' autocomplete='off' name='%NAME%_bottom_padding'></span>" : "" ) + ( ( this.options.enablePadding ) ? "</div>" : "" ) + ( ( this.options.enablePadding ) ? "<span class='boxmodel-input-container boxmodel-input-direction-right'><input type='text' autocomplete='off' name='%NAME%_right_padding'></span>" : "" ) + ( ( this.options.enablePadding ) ? "</div>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-bottom'><input type='text' autocomplete='off' name='%NAME%_bottom_border'></span>" : "" ) + ( ( this.options.enableBorder ) ? "</div>" : "" ) + ( ( this.options.enableBorder ) ? "<span class='boxmodel-input-container boxmodel-input-direction-right'><input type='text' autocomplete='off' name='%NAME%_right_border'></span>" : "" ) + ( ( this.options.enableBorder ) ? "</div>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-bottom'><input type='text' autocomplete='off' name='%NAME%_bottom_margin'></span>" : "" ) + ( ( this.options.enableMargin ) ? "</div>" : "" ) + ( ( this.options.enableMargin ) ? "<span class='boxmodel-input-container boxmodel-input-direction-right'><input type='text' autocomplete='off' name='%NAME%_right_margin'></span>" : "" ) + ( ( this.options.enableMargin ) ? "</div>" : "" ) + "<input type='hidden' name='%NAME%_auto_text'>" + ( ( this.options.enableMargin ) ? "<input type='hidden' name='%NAME%_margin'>" : "" ) + ( ( this.options.enablePadding ) ? "<input type='hidden' name='%NAME%_padding'>" : "" ) + ( ( this.options.enableBorder ) ? "<input type='hidden' name='%NAME%_border'>" : "" ) + ( ( this.options.enableDimensions ) ? "<input type='hidden' name='%NAME%_dimensions'>" : "" ) + "</div>";
             this.options.inputName = this.options.inputName === null ? this.$element.data( "name" ) : this.options.inputName;
             this.$element.html( template.replace( /\%NAME\%/g, this.options.inputName ) );
             if ( typeof this.options.onInit == 'function' ) this.options.onInit( this );
             this.bindEvents();
-            this.inputs.val( this.options.autoText ).attr( "size", 3 );
+            this.inputs.val( this.options.emptyText ).attr( "size", 3 );
             this.setInitialValues();
         },
         /**
@@ -144,10 +146,10 @@
          */
         parseStringCSS: function( str ) {
             var result = {
-                top: "auto",
-                bottom: "auto",
-                left: "auto",
-                right: "auto"
+                top: this.emptyText,
+                bottom: this.emptyText,
+                left: this.emptyText,
+                right: this.emptyText
             };
             if ( str === null ) return result;
             var units = str.split( " " );
@@ -171,10 +173,7 @@
                 result.right = units[ 0 ];
                 result.bottom = units[ 0 ];
                 result.left = units[ 0 ];
-            }
-            for(var i in result){
-                if(result[i] === "auto") result[i] = this.options.autoText;
-            }
+            }            
             return result;
         },
         /**
@@ -185,7 +184,7 @@
         validate: function( elem ) {
             var value = elem.val();
             if(value === "auto") value = this.options.autoText;
-            if ( value !== this.options.autoText ) {
+            if ( value !== this.options.autoText && value !== this.options.emptyText) {
                 var unit = this.getUnit( value );
                 var val = parseFloat( value );
                 if ( ( unit === value.substr( -1 * unit.length ) ) && ( val + "" + unit === value ) ) {
@@ -209,6 +208,7 @@
             this.inputs.on( "mousewheel", $.proxy( this.wheelEvent, this ) );
             this.$element.find( "span.boxmodel-lock" ).on( "click", $.proxy( this.lockEvent, this ) );
             this.$element.find( "input[name='" + this.options.inputName + "_auto_text']" ).val( this.options.autoText );
+            this.$element.find( "input[name='" + this.options.inputName + "_empty_text']" ).val( this.options.emptyText );
             this.updateMarginCombined();
             this.updateBorderCombined();
             this.updatePaddingCombined();
@@ -221,7 +221,9 @@
          */
         lockEvent: function( event ) {
             var elem = $( event.target );
-            if(!elem.hasClass("boxmodel-lock")) elem = elem.closest(".boxmodel-lock");
+            if(!elem.hasClass("boxmodel-lock")) {
+                elem = elem.closest(".boxmodel-lock");
+            }
             elem.toggleClass( "boxmodel-locked" );
             if ( elem.hasClass( "boxmodel-locked" ) ) {
                 elem.html( "&#x1f512;" );
@@ -252,7 +254,7 @@
         blurEvent: function( event ) {
             var elem = $( event.target );
             var val = elem.val();
-            if ( val.trim() === "" || !this.validate( elem ) ) elem.val( this.options.autoText );
+            if ( val.trim() === "" || !this.validate( elem ) ) elem.val( this.options.emptyText );
             if ( val !== elem.val() ) this.changeEvent( elem );
             this.$element.trigger( "boxmodel:blur", [ event, elem, elem.val(), this.getAllProperties() ] );
         },
@@ -407,6 +409,7 @@
         getInputValue: function( property ) {
             var val = this.$element.find( "input[name='" + this.options.inputName + "_" + property + "']" ).val();
             if ( val == this.options.autoText ) return "auto";
+            if ( val == this.options.emptyText) return "initial";
             return val;
         },
         /**
@@ -446,7 +449,7 @@
                     output.attr( 'size', output.val().length < 3 ? 3 : output.val().length );
                     return true;
                 } else {
-                    output.val(this.options.autoText);
+                    output.val(this.options.emptyText);
                     return false;
                 }
             }

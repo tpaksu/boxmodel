@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['js/boxmodel.js'],
-                tasks: ['uglify','obfuscator']
+                tasks: ['uglify','jsObfuscate']
             },
             styles: {
                 files: ['css/boxmodel.scss'],
