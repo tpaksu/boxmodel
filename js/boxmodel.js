@@ -50,6 +50,10 @@
         paddingLabel: "Padding",
         borderLabel: "Border",
         dimensionLabel: "x",
+        showShortcuts: true,
+        autoPasteLabel: "auto",
+        clearLabel: "clear",
+        clearAllLabel: "clear all",
         values: null
     };
 
@@ -64,7 +68,7 @@
         this._metadata = this.$element.data("plugin-options");
         this.options = $.extend( {}, defaults, options, this._metadata );
         this.inputs = null;
-        this._defaults = defaults;        
+        this._defaults = defaults;
         this.init();
     }
     /**
@@ -173,7 +177,7 @@
                 result.right = units[ 0 ];
                 result.bottom = units[ 0 ];
                 result.left = units[ 0 ];
-            }            
+            }
             return result;
         },
         /**
@@ -209,30 +213,57 @@
             this.$element.find( "span.boxmodel-lock" ).on( "click", $.proxy( this.lockEvent, this ) );
             this.$element.find( "input[name='" + this.options.inputName + "_auto_text']" ).val( this.options.autoText );
             this.$element.find( "input[name='" + this.options.inputName + "_empty_text']" ).val( this.options.emptyText );
-            this.appendAutoLinks();
+            if(this.options.showShortcuts) this.appendAutoLinks();
             this.updateMarginCombined();
             this.updateBorderCombined();
             this.updatePaddingCombined();
             this.updateDimensionsCombined();
         },
         /**
-         * appends auto links after inputs and adds the hover and click event 
+         * appends auto links after inputs and adds the hover and click event
          * @return {null} null
          */
         appendAutoLinks: function(){
             var that = this;
-            this.inputs.after("<span class='boxmodel-auto-link'>"+this.options.autoText+"</span>");
-            this.$element.find(".boxmodel-auto-link").on("click", function(){
-                $(this).prev("input").val(that.options.autoText);
-            }).hide();
-            this.inputs.on("mouseenter", function(){
-                console.log("shown");
-                $(this).next(".boxmodel-auto-link").show();
-            }).on("mouseleave", function(){
-                console.log("hidden");
-                $(this).next(".boxmodel-auto-link").hide();
+            $("<div class='boxmodel-links' style='display:none;'><a data-value='auto'>"+that.options.autoPasteLabel+"<span><a data-value='clear'>"+that.options.clearLabel+"<span><a data-value='clearall'>"+that.options.clearAllLabel+"<span></div>").appendTo(this.$element);
+            var autoLink = $(".boxmodel-links");
+            this.inputs.on("focus", function(){
+                var that2 = $(this);
+                if(that2.parents(".boxmodel-input-container").length > 0){
+                    autoLink.show();
+                    var direction = "";
+                    autoLink.removeClass("boxmodel-links-arrow-bottom boxmodel-links-arrow-left boxmodel-links-arrow-right boxmodel-links-arrow-top");
+                    if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-bottom")) direction = "boxmodel-links-arrow-top";
+                    if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-top")) direction = "boxmodel-links-arrow-bottom";
+                    if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-left")) direction = "boxmodel-links-arrow-right";
+                    if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-right")) direction = "boxmodel-links-arrow-left";
+                    that2.addClass("boxmodel-focus");
+                    autoLink.addClass(direction);                                  
+                }
+            }).on("blur", function(){
+                var that2 = $(this);
+                if(that2.parents(".boxmodel-input-container").length > 0){
+                    autoLink.hide();
+                    setTimeout(function(){
+                        that2.removeClass("boxmodel-focus");
+                    }, 50);
+                }
             });
-
+            autoLink.find("a[data-value='auto']").on("mousedown", function(){
+                var elem = $(".boxmodel-focus");
+                elem.val(that.options.autoText);
+                that.changeEvent(elem);
+            });
+            autoLink.find("a[data-value='clear']").on("mousedown", function(){
+                var elem = $(".boxmodel-focus");
+                elem.val(that.options.emptyText);
+                that.changeEvent(elem);
+            });
+            autoLink.find("a[data-value='clearall']").on("mousedown", function(){
+                var elem = $(".boxmodel-focus");
+                that.inputs.val(that.options.emptyText);
+                that.changeEvent(elem);
+            });
         },
         /**
          * event handler for lock buttons
@@ -250,7 +281,7 @@
             } else {
                 elem.html( "&#128275;" );
             }
-            event.preventDefault();        
+            event.preventDefault();
         },
         /**
          * event handler for input key up event
@@ -412,7 +443,7 @@
             this.updateOptimizedInputs( "padding" );
         },
         /**
-         * Updates the combined dimension input value with the width and height input         
+         * Updates the combined dimension input value with the width and height input
          * @return none
          */
         updateDimensionsCombined: function() {
@@ -433,9 +464,9 @@
             return val;
         },
         /**
-         * Optimizes and Updates the combined inputs 
+         * Optimizes and Updates the combined inputs
          * @param  {string} key padding margin etc.
-         * @return nothing         
+         * @return nothing
          */
         updateOptimizedInputs: function( key ) {
             var top = this.getInputValue( "top_" + key );

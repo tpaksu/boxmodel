@@ -533,16 +533,8 @@
 			"file": "js/boxmodel.js",
 			"settings":
 			{
-				"buffer_size": 29313,
+				"buffer_size": 30184,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "$( '#proposal-type' ).click( function () {\n    $( '#proposal-type-drop' ).addClass( 'active' );\n} );\n$( '.drop-item-input' ).on( 'change', function () {\n    var proposalVal = \"\";\n    var proposalHtml = \"\";\n    $( '.drop-item-input' ).each( function () {\n        if ( $( this ).is( \":checked\" ) ) {\n            proposalVal += $( this ).val();\n            proposalHtml += '<div class=\"drop-item-selected\"><span class=\"drop-item-close\"></span>' + $( this ).val() + '</div>';\n            $( this ).closest( 'label' ).fadeOut();\n        };\n        $( '#proposal-type' ).val( proposalVal ).html( proposalHtml );\n        $( '#proposal-type-drop' ).removeClass( 'active' );\n    } );\n    //values\n    var type = $( '.drop-item-input:checked' ).map( function () {\n        return $( this ).val();\n    } ).get().join( ', ' );\n    console.log( type );\n} );\n//Uncheck/remove\n$( '.drop-item-close' ).click( function () {\n    $( this ).is( \":checked\" ) === false;\n    $( this ).closest( 'label' ).fadeIn();\n    $( this ).closest( '.drop-item-selected' ).fadeOut();\n} );",
-			"settings":
-			{
-				"buffer_size": 1053,
 				"line_ending": "Windows"
 			}
 		},
@@ -558,7 +550,7 @@
 			"file": "css/boxmodel.scss",
 			"settings":
 			{
-				"buffer_size": 12502,
+				"buffer_size": 12653,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -879,6 +871,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/taha.paksu/Desktop/Ekran tasarımları yeni/yemek kartı yeni ödeme butonu/files.txt",
 		"/D/trunk/boxmodel/Gruntfile.js",
 		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/build/js/boxmodel.obf.js",
 		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/package.json",
@@ -1005,8 +998,7 @@
 		"/C/Users/taha.paksu/AppData/Local/Temp/fz3temp-1/editorial-featured-slider.php",
 		"/C/laragon/www/wordpress/wp-includes/theme-compat/header.php",
 		"/C/laragon/www/wordpress/wp-content/themes/watcher/molavie.sublime-project",
-		"/C/Users/taha.paksu/Desktop/nihalgidecek.txt",
-		"/C/laragon/www/wordpress/wp-content/themes/watcher/assets/styles/components/_buttons.scss"
+		"/C/Users/taha.paksu/Desktop/nihalgidecek.txt"
 	],
 	"find":
 	{
@@ -1322,7 +1314,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1364,15 +1356,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 29313,
+						"buffer_size": 30184,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4208,
-								4208
+								14771,
+								14771
 							]
 						],
 						"settings":
@@ -1384,44 +1376,14 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 672.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								1053
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2786.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "package.json",
 					"semi_transient": true,
 					"settings":
@@ -1451,20 +1413,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "css/boxmodel.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12502,
+						"buffer_size": 12653,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2193,
-								2193
+								1040,
+								1040
 							]
 						],
 						"settings":
@@ -1475,14 +1437,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 810.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "documentation.md",
 					"semi_transient": false,
 					"settings":
@@ -1513,7 +1475,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "docs/includes/template.html",
 					"semi_transient": false,
 					"settings":
@@ -1540,7 +1502,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
