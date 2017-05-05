@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"boxmodel",
+				"boxmodel-arrow-top"
+			],
+			[
+				"boxmodel-arr",
+				"boxmodel-arrow-right"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"pos",
+				"pos:a\tposition:absolute"
+			],
+			[
 				"input",
 				"inputName"
 			],
@@ -46,10 +62,6 @@
 			[
 				"add_menu",
 				"add_menu_page\tWP Function"
-			],
-			[
-				"pos",
-				"pos\tposition: ${1:relative};"
 			],
 			[
 				"for",
@@ -150,10 +162,6 @@
 			[
 				"back",
 				"background"
-			],
-			[
-				"backgrou",
-				"background-position"
 			],
 			[
 				"pois",
@@ -506,14 +514,6 @@
 			[
 				"prot",
 				"prototype"
-			],
-			[
-				"Sche",
-				"Schema::create-table\tCreate new table"
-			],
-			[
-				"rectang",
-				"rectangleOptions"
 			]
 		]
 	},
@@ -533,7 +533,7 @@
 			"file": "js/boxmodel.js",
 			"settings":
 			{
-				"buffer_size": 30184,
+				"buffer_size": 32248,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -550,25 +550,7 @@
 			"file": "css/boxmodel.scss",
 			"settings":
 			{
-				"buffer_size": 12653,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "documentation.md",
-			"settings":
-			{
-				"buffer_size": 25304,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "docs/includes/template.html",
-			"settings":
-			{
-				"buffer_size": 2018,
+				"buffer_size": 16525,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -871,6 +853,9 @@
 	],
 	"file_history":
 	[
+		"/D/trunk/boxmodel/documentation.md",
+		"/D/trunk/boxmodel/docs/includes/template.html",
+		"/C/Projects/Chrome/EdipBaseLib-DEV011024-11-creditfix/EdipBaseLib/EDIPBASE.err",
 		"/C/Users/taha.paksu/Desktop/Ekran tasarımları yeni/yemek kartı yeni ödeme butonu/files.txt",
 		"/D/trunk/boxmodel/Gruntfile.js",
 		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/build/js/boxmodel.obf.js",
@@ -995,10 +980,7 @@
 		"/C/laragon/tmp/php_errors.log",
 		"/C/laragon/www/wordpress/wp-content/themes/watcher/templates/header.php",
 		"/C/laragon/www/wordpress/wp-admin/includes/class-wp-internal-pointers.php",
-		"/C/Users/taha.paksu/AppData/Local/Temp/fz3temp-1/editorial-featured-slider.php",
-		"/C/laragon/www/wordpress/wp-includes/theme-compat/header.php",
-		"/C/laragon/www/wordpress/wp-content/themes/watcher/molavie.sublime-project",
-		"/C/Users/taha.paksu/Desktop/nihalgidecek.txt"
+		"/C/Users/taha.paksu/AppData/Local/Temp/fz3temp-1/editorial-featured-slider.php"
 	],
 	"find":
 	{
@@ -1041,6 +1023,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			");",
 			"<input type='text' ",
 			"autotext",
 			"updateDimensions",
@@ -1167,8 +1150,7 @@
 			"request",
 			"fetchFromFoursquare",
 			"setFocus",
-			"icon:",
-			"icon"
+			"icon:"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1330,8 +1312,8 @@
 						"selection":
 						[
 							[
-								3949,
-								3949
+								260,
+								260
 							]
 						],
 						"settings":
@@ -1344,7 +1326,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1176.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1356,15 +1338,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30184,
+						"buffer_size": 32248,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14771,
-								14771
+								15074,
+								15074
 							]
 						],
 						"settings":
@@ -1376,7 +1358,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2786.0,
+						"translation.y": 3018.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1409,7 +1391,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1418,15 +1400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12653,
+						"buffer_size": 16525,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1040,
-								1040
+								5621,
+								5621
 							]
 						],
 						"settings":
@@ -1437,72 +1419,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 126.0,
+						"translation.y": 1921.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "documentation.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25304,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2734,
-								2734
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 148.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "docs/includes/template.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2018,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1073,
-								1073
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]
