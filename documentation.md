@@ -105,7 +105,8 @@ These are the options you can set with the javascript plugin initialization obje
 - `boxmodel:change` [event handler]: event which is triggered after changing any input on the boxmodel. Attached to the container element itself.
 
 	**Prototype:**
-	```javascript
+
+  ```javascript
 		$(".boxmodel").on("boxmodel:change", function(element, value, all){
 			...
 		});
@@ -113,13 +114,15 @@ These are the options you can set with the javascript plugin initialization obje
 		// parameters : element -> the input which triggered the change event
 		// 			 value   -> the input value
 		//			  all	 -> all input values on the plugin as an object
-
-	```<br><br>
+  ```
+<br>
+<br>
 
 - `boxmodel:blur` [event handler]:  event which is triggered after when an input loses focus on the container. Attached to the container element itself.
 
-    **Prototype:**
-	```javascript
+  **Prototype:**
+
+  ```javascript
 		$(".boxmodel").on("boxmodel:blur", function(element, value, all){
 			...
 		});
@@ -127,11 +130,15 @@ These are the options you can set with the javascript plugin initialization obje
 		// parameters : element -> the input which triggered the change event
 		// 			 value   -> the input value
 		//			  all	 -> all input values on the plugin as an object
-	```<br><br>
+  ```
+<br>
+<br>
+
 - `boxmodel:keyup` [event handler]:  event which is triggered after when an input had a key pressed on the container. Attached to the container element itself.
 
-    **Prototype:**
-	```javascript
+  **Prototype:**
+
+  ```javascript
 		$(".boxmodel").on("boxmodel:keyup", function(event, element, value, all){
 			...
 		});
@@ -140,10 +147,14 @@ These are the options you can set with the javascript plugin initialization obje
 		//				 element  -> the input which triggered the change event
 		// 				value	-> the input value
 		//				 all	  -> all input values on the plugin as an object
-	```<br><br>
+  ```
+<br>
+<br>
+
 - `boxmodel:error` [event handler]:  event which is triggered after when an user input triggered a validation error on the container. Attached to the container element itself.
 
-    **Prototype:**
+  **Prototype:**
+
 	```javascript
 		$(".boxmodel").on("boxmodel:error", function(element, value, all){
 			...
@@ -162,8 +173,9 @@ These are the options you can set with the javascript plugin initialization obje
 - `getAllProperties` [function]: Gets all the inputs as an object.
 <br><br>
 - `setValue` [function]: Sets a specific value, returns `false` if validation `fails`, does nothing and returns `true` when the related input doesn't exist.
-<br>**Prototype:**
-```javascript
+
+  **Prototype:**
+  ```javascript
 	var boxmodel = $("#boxmodel").boxModel();
 	//  parameters:
 	//	string direction (top, left, bottom, right)
@@ -171,34 +183,37 @@ These are the options you can set with the javascript plugin initialization obje
 	//	string value
 	boxmodel.setValue("top","margin","5px");
 	boxmodel.setValue(null, "width", "250px");
-```
+  ```
 <br><br>
 - `setBorders` [function]: Sets all borders to a specific value, returns `false` if validation fails, does nothing and returns `true` when `enableBorder` is set to `false`.
-<br>**Prototype:**
-```javascript
+<br>
+  **Prototype:**
+  ```javascript
 	var boxmodel = $("#boxmodel").boxModel();
 	//  parameters:
 	//	string value
 	boxmodel.setBorders("1px");
-```
+  ```
 <br><br>
 - `setPaddings` [function]: Sets all paddings to a specific value, returns `false` if validation fails, does nothing and returns `true` when `enablePadding` is set to `false`.
-<br>**Prototype:**
-```javascript
+<br>
+  **Prototype:**
+  ```javascript
 	var boxmodel = $("#boxmodel").boxModel();
 	//  parameters:
 	//	string value
 	boxmodel.setPaddings("8px");
-```
+  ```
 <br><br>
 - `setMargins` [function]: Sets all borders to a specific value, returns `false` if validation fails, does nothing and returns `true` when `enableMargin` is set to `false`.
-<br>**Prototype:**
-```javascript
+<br>
+  **Prototype:**
+  ```javascript
 	var boxmodel = $("#boxmodel").boxModel();
 	//  parameters:
 	//	string value
 	boxmodel.setMargins("3px");
-```
+  ```
 <br><br>
 - `setWidth` [function]: Sets the width input, returns `false` if validation `fails`, does nothing and returns `true when `enableDimensions` is set to `false`.
 <br>**Prototype:**
@@ -317,9 +332,9 @@ Showing how to implement initialization using an object with undefined values.
         values: {
           margins: {
             top: "1px",
-            left: "2px"            
+            left: "2px"
           },
-          paddings: {            
+          paddings: {
             bottom: "4px"
           },
           borders: {
@@ -343,9 +358,9 @@ Showing how to implement initialization using an object with undefined values.
         values: {
           margins: {
             top: "1px",
-            left: "2px"            
+            left: "2px"
           },
-          paddings: {            
+          paddings: {
             bottom: "4px"
           },
           borders: {
@@ -377,11 +392,11 @@ Showing how to implement initialization using an object with invalid values.
         values: {
           margins: {
             top: "1px",
-            left: "2py"            
+            left: "2py"
           },
-          paddings: {   
+          paddings: {
             top: "1px",
-            bottom: "4"            
+            bottom: "4"
           },
           borders: {
             leftx: "2px",
@@ -405,11 +420,11 @@ Showing how to implement initialization using an object with invalid values.
         values: {
           margins: {
             top: "1px",
-            left: "2py"            
+            left: "2py"
           },
-          paddings: {   
+          paddings: {
             top: "1px",
-            bottom: "4"            
+            bottom: "4"
           },
           borders: {
             leftx: "2px",
@@ -518,7 +533,7 @@ Showing how to implement initialization with shortened css strings.
 <div class="well well-sm" style="display: flex; align-items: center; justify-content: center; padding: 20px;">
 <div id="boxmodel-ex-1-6" data-name="boxmodel-ex-1-6"></div>
 </div>
-<script type="text/javascript">$("#boxmodel-ex-1-6").boxModel({ 
+<script type="text/javascript">$("#boxmodel-ex-1-6").boxModel({
         values: {
           margins: "john doe 25ipx",
           paddings: "1em 2rem 3pem",

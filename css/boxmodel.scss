@@ -1,10 +1,10 @@
-.boxmodel {
     .boxmodel-container {
         display: inline-flex;
         flex-direction: column;
         flex-flow: column wrap;
         font-family: "Consolas", "Monaco", monospace;
         font-size: 12px;
+        position: relative;
         .boxmodel-info {
             font-size: 10px;
             font-family: Verdana;
@@ -13,8 +13,7 @@
             line-height: 14px;
             margin: 2px 0 0 0;
             padding: 0px;
-            margin-top:2px;
-
+            margin-top: 2px;
         }
         div:not(.flex-row) {
             box-sizing: border-box;
@@ -98,11 +97,10 @@
             margin: 0px;
             padding: 1px;
             text-align: center;
-            &:focus, &:active {
-
-            }
+            &:focus, &:active {}
         }
     }
+    
     .boxmodel-links {
         position: absolute;
         background: white;
@@ -111,6 +109,7 @@
         margin-top: 6px;
         border-radius: 4px;
         border: 1px solid #666666;
+        box-sizing: border-box;
         a {
             display: block;
             cursor: hand;
@@ -129,10 +128,11 @@
             border-radius: 0 0 2px 3px;
         }
     }
+    
     .boxmodel-links-arrow-top {
         a {
             border-bottom: 1px solid #666666;
-        }        
+        }
         &:last-child {
             border-bottom: none;
         }
@@ -156,9 +156,10 @@
             border-color: rgba(129, 150, 163, 0);
             border-bottom-color: #666666;
             border-width: 7px;
-            margin-left: -7px;
+            margin-left: -6.5px;
         }
     }
+    
     .boxmodel-links-arrow-bottom {
         a {
             border-top: 1px solid #666666;
@@ -186,9 +187,10 @@
             border-color: rgba(129, 150, 163, 0);
             border-top-color: #666666;
             border-width: 7px;
-            margin-left: -7px;
+            margin-left: -6.5px;
         }
     }
+    
     .boxmodel-links-arrow-right {
         a {
             border-top: 1px solid #666666;
@@ -210,15 +212,16 @@
             border-color: rgba(255, 255, 255, 0);
             border-left-color: #ffffff;
             border-width: 6px;
-            margin-top: -6px;
+            margin-top: -5px;
         }
         &.boxmodel-links:before {
             border-color: rgba(129, 150, 163, 0);
             border-left-color: #666666;
             border-width: 7px;
-            margin-top: -7px;
+            margin-top: -5.5px;
         }
     }
+    
     .boxmodel-links-arrow-left {
         a {
             border-top: 1px solid #666666;
@@ -246,431 +249,455 @@
             border-color: rgba(129, 150, 163, 0);
             border-right-color: #666666;
             border-width: 7px;
-            margin-top: -7px;
+            margin-top: -6.5px;
         }
     }
-}
-
-.boxmodel-chrome-skin {
-    .boxmodel-container {
-        .boxmodel-margin {
-            background: #f9cc9d;
-            border: 1px dashed #222;
-        }
-        .boxmodel-border {
-            background: #ffeebc;
-            border: 1px solid #000;
-        }
-        .boxmodel-padding {
-            background: #c3deb7;
-            border: 1px dashed #808080;
-        }
-        .boxmodel-content {
-            background: #a0c5e8;
-            border: 1px solid #808080;
-        }
-        .boxmodel-text {
-            color: black;
-            &.boxmodel-header {
-                color: black;
+    
+    @mixin boxmodel-tooltip($text-color, $border-color, $background-color, $hover-back-color, $border-radius) {
+        .boxmodel-links {
+            color: $text-color;
+            border-color: $border-color;
+            border-radius: $border-radius;
+            box-sizing: border-box;
+            a {
+                border-color: $border-color;
+                background: $background-color;
+                &:first-child {
+                    @if $border-radius>=2px {
+                        border-radius: ($border-radius - 2px) ($border-radius - 2px) 0 0;
+                    }
+                    @else {
+                        border-radius: ($border-radius) ($border-radius) 0 0;
+                    }
+                }
+                &:last-child {
+                    @if $border-radius>=2px {
+                        border-radius: 0 0 ($border-radius - 2px) ($border-radius - 2px);
+                    }
+                    @else {
+                        border-radius: 0 0 ($border-radius) ($border-radius);
+                    }
+                }
+                &:hover {
+                    background-color: $hover-back-color;
+                }
             }
-        }
-    }
-    .boxmodel-links {
-        color: #fff;
-        border: 1px solid #fff;
-        a {            
-            border-color: #fff;
-            background: #888;            
-        }
-        &.boxmodel-links-arrow-top {
-            &:after {
-                border-color: rgba(255, 255, 255, 0);
-                border-bottom-color: white;
+            &.boxmodel-links-arrow-top {
+                &:after {
+                    border-color: rgba(255, 255, 255, 0);
+                    border-bottom-color: $background-color;
+                }
+                &:before {
+                    border-color: rgba(129, 150, 163, 0);
+                    border-bottom-color: $border-color;
+                }
             }
-            &:before {
-                border-color: rgba(129, 150, 163, 0);
-                border-bottom-color: #888;
+            &.boxmodel-links-arrow-bottom {
+                &:after {
+                    border-color: rgba(255, 255, 255, 0);
+                    border-top-color: $background-color;
+                }
+                &:before {
+                    border-color: rgba(129, 150, 163, 0);
+                    border-top-color: $border-color;
+                }
             }
-        }
-        &.boxmodel-links-arrow-bottom {
-            &:after {
-                border-color: rgba(255, 255, 255, 0);
-                border-top-color: white;
+            &.boxmodel-links-arrow-left {
+                &:after {
+                    border-color: rgba(255, 255, 255, 0);
+                    border-right-color: $background-color;
+                }
+                &:before {
+                    border-color: rgba(129, 150, 163, 0);
+                    border-right-color: $border-color;
+                }
             }
-            &:before {
-                border-color: rgba(129, 150, 163, 0);
-                border-top-color: #888;
-            }
-        }
-        &.boxmodel-links-arrow-left {
-            &:after {
-                border-color: rgba(255, 255, 255, 0);
-                border-right-color: white;
-            }
-            &:before {
-                border-color: rgba(129, 150, 163, 0);
-                border-right-color: #888;
-            }
-        }
-        &.boxmodel-links-arrow-right {
-            &:after {
-                border-color: rgba(255, 255, 255, 0);
-                border-left-color: white;
-            }
-            &:before {
-                border-color: rgba(129, 150, 163, 0);
-                border-left-color: #888;
-            }
-        }
-    }
-}
-
-.boxmodel-firebug-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {
-            color: #7485af;
-            font-family: "Consolas", "Monaco", monospace;
-            font-size: 11px;
-        }
-        span.boxmodel-text {
-            font-family: "Consolas", "Monaco", monospace;
-            font-size: 11px;
-            &.boxmodel-header {
-                color: #7485af;
-                top: auto;
-                left: auto;
-                right: 2px;
-                bottom: 0px;
-            }
-        }
-        span.boxmodel-lock {
-            bottom: auto;
-            right: auto;
-            top: 2px;
-            left: 2px;
-        }
-        .boxmodel-margin {
-            background: #e3ca98;
-            border: 1px dotted #bbddff;
-        }
-        .boxmodel-border {
-            background: #ffef83;
-            border: 1px dotted #d1e8ff;
-        }
-        .boxmodel-padding {
-            background: #ace2ac;
-            border: 1px dotted #d1e8ff;
-        }
-        .boxmodel-content {
-            background: #b3e5ff;
-            border: 1px dotted #d1e8ff;
-            padding: 0 14px;
-        }
-        .boxmodel-text {
-            color: black;
-            &.boxmodel-header {
-                color: black;
-            }
-        }
-    }
-}
-
-.boxmodel-ie-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {
-            color: #7485af;
-            font-family: "Consolas", "Monaco", monospace;
-            font-size: 11px;
-        }
-        span.boxmodel-text {
-            font-family: "Consolas", "Monaco", monospace;
-            font-size: 10px;
-            &.boxmodel-header {
-                color: #7485af;
-            }
-        }
-        .boxmodel-input-direction-right, .boxmodel-input-direction-left {
-            position: relative;
-            transform: rotate(-90deg);
-        }
-        .boxmodel-margin {
-            background: #FFEFC7;
-            border: 1px solid #FAD05B;
-        }
-        .boxmodel-border {
-            background: #D3E7BC;
-            border: 1px solid #9BCD61;
-        }
-        .boxmodel-padding {
-            background: #FBD4C7;
-            border: 1px solid #F7A387;
-        }
-        .boxmodel-content {
-            background: #E2F3FB;
-            border: 1px solid #A8DDF6;
-            padding: 0 14px;
-        }
-        .boxmodel-text {
-            color: black;
-            &.boxmodel-header {
-                color: black;
-            }
-        }
-    }
-}
-
-.boxmodel-rounded-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {}
-        input:focus, input:active {}
-        span.boxmodel-text {
-            &.boxmodel-header {
-                top: 4px;
-                left: 4px;
-            }
-        }
-        span.boxmodel-lock {
-            bottom: 6px;
-            right: 8px;
-            color: #555;
-        }
-        .boxmodel-margin {
-            border-radius: 12px;
-        }
-        .boxmodel-border {
-            border-radius: 12px;
-        }
-        .boxmodel-padding {
-            border-radius: 12px;
-        }
-        .boxmodel-content {
-            border-radius: 12px;
-        }
-        .boxmodel-text {
-            &.boxmodel-header {}
-        }
-    }
-}
-
-.boxmodel-dark-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {
-            color: #778;
-        }
-        input:focus, input:active {
-            background: #000;
-            border-color: #111;
-        }
-        span.boxmodel-text {
-            &.boxmodel-header {
-                color: #778;
-            }
-        }
-        span.boxmodel-lock {
-            color: #778;
-            &.boxmodel-locked {
-                color: white;
-            }
-        }
-        .boxmodel-margin {
-            background: #000;
-            border: 1px dashed #556;
-        }
-        .boxmodel-border {
-            background: #223;
-            border: 2px solid #667;
-        }
-        .boxmodel-padding {
-            background: #112;
-            border: 1px dashed #556;
-        }
-        .boxmodel-content {
-            background: #001;
-            border: 1px solid #556;
-            color: white;
-        }
-        .boxmodel-text {
-            color: white;
-            &.boxmodel-header {
-                color: white;
-            }
-        }
-    }
-}
-
-.boxmodel-neo-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {
-            color: #ccff00;
-        }
-        input:focus, input:active {
-            background: #111F11;
-            border-color: #94c409;
-        }
-        span.boxmodel-text {
-            &.boxmodel-header {
-                color: #ccff00;
-            }
-        }
-        span.boxmodel-lock {
-            color: #ccff00;
-            &.boxmodel-locked {
-                color: white;
-            }
-        }
-        .boxmodel-margin {
-            background: #000;
-            border: 1px dashed #ccff00;
-            border-radius: 6px;
-        }
-        .boxmodel-border {
-            background: #000;
-            border: 2px solid #ccff00;
-            border-radius: 6px;
-        }
-        .boxmodel-padding {
-            background: #000;
-            border: 1px dashed #ccff00;
-            border-radius: 6px;
-        }
-        .boxmodel-content {
-            background: #000;
-            border: 1px solid #ccff00;
-            color: #ccff00;
-            border-radius: 6px;
-        }
-        .boxmodel-text {
-            color: #ccff00;
-            &.boxmodel-header {
-                color: #ccff00;
-            }
-        }
-    }
-}
-
-.boxmodel-perspective-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {
-            color: #eee;
-        }
-        input:focus, input:active {
-            background: #000;
-            border-color: #fff;
-        }
-        span.boxmodel-text {
-            &.boxmodel-header {
-                color: #fff;
-                top: 2px;
-                left: 3px;
-                font-size: 9px;
-                display: block;
-                text-shadow: 1px 1px 1px black;
-            }
-        }
-        span.boxmodel-lock {
-            bottom: 5px;
-            right: 5px;
-            text-shadow: 1px 1px 1px black;
-            color: #eee;
-        }
-        .boxmodel-margin {
-            background: #21293A;
-            border: 1px dashed #aaa;
-            box-shadow: inset 0 0 20px 0px black;
-            border-radius: 6px;
-        }
-        .boxmodel-border {
-            background: #424252;
-            border: 2px solid #bbb;
-            border-radius: 6px;
-            box-shadow: inset 0 0 20px 0px black;
-        }
-        .boxmodel-padding {
-            background: #525262;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-shadow: inset 0 0 20px 0px black;
-        }
-        .boxmodel-content {
-            background: #828292;
-            border: 1px solid #ddd;
-            color: #fff;
-            border-radius: 6px;
-            box-shadow: inset 0 0 10px 0px black;
-        }
-        .boxmodel-text {
-            color: #000;
-            &.boxmodel-header {
-                color: #000;
-            }
-        }
-    }
-}
-
-.boxmodel-metal-skin {
-    .boxmodel-container {
-        input, input:focus, input:active {
-            color: #eee;
-            text-shadow: 0px 0px 2px black;
-        }
-        input:focus, input:active {
-
-        }
-        span.boxmodel-text {
-            &.boxmodel-header {
-                color: #ddd;
-                text-shadow: 0px 0px 2px black;
-                top: 2px;
-                left: 3px;
-            }
-        }
-        span.boxmodel-lock {
-            bottom: 5px;
-            right: 5px;
-            text-shadow: 0px 0px 1px white;
-            color: #333;
-            &.boxmodel-locked {
-                color: #fff;
-            }
-        }
-        .boxmodel-margin {
-            //background: #444;
-            border: 2px solid #222;
-            border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #222, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 200px -30px black;
-            &>span.boxmodel-text {
-                &.boxmodel-header {
-                    color: black;
-                    text-shadow: none;
+            &.boxmodel-links-arrow-right {
+                &:after {
+                    border-color: rgba(255, 255, 255, 0);
+                    border-left-color: $background-color;
+                }
+                &:before {
+                    border-color: rgba(129, 150, 163, 0);
+                    border-left-color: $border-color;
                 }
             }
         }
-        .boxmodel-border {
-            //background: #555;
-            border: 2px solid #222;
-            border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 200px -30px black;
+    }
+    
+    .boxmodel-chrome-skin {
+        .boxmodel-container {
+            .boxmodel-margin {
+                background: #f9cc9d;
+                border: 1px dashed #222;
+            }
+            .boxmodel-border {
+                background: #ffeebc;
+                border: 1px solid #000;
+            }
+            .boxmodel-padding {
+                background: #c3deb7;
+                border: 1px dashed #808080;
+            }
+            .boxmodel-content {
+                background: #a0c5e8;
+                border: 1px solid #808080;
+            }
+            .boxmodel-text {
+                color: black;
+                &.boxmodel-header {
+                    color: black;
+                }
+            }
         }
-        .boxmodel-padding {
-            //background: #666;
-            border: 2px solid #222;
-            border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #222, 0 0 1px 0 #666, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 150px -28px black;
+        @include boxmodel-tooltip(#fff, #888, #888, #777, 3px);
+    }
+    
+    .boxmodel-firebug-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {
+                color: #7485af;
+                font-family: "Consolas", "Monaco", monospace;
+                font-size: 11px;
+            }
+            span.boxmodel-text {
+                font-family: "Consolas", "Monaco", monospace;
+                font-size: 11px;
+                &.boxmodel-header {
+                    color: #7485af;
+                    top: auto;
+                    left: auto;
+                    right: 2px;
+                    bottom: 0px;
+                }
+            }
+            span.boxmodel-lock {
+                bottom: auto;
+                right: auto;
+                top: 2px;
+                left: 2px;
+            }
+            .boxmodel-margin {
+                background: #e3ca98;
+                border: 1px dotted #bbddff;
+            }
+            .boxmodel-border {
+                background: #ffef83;
+                border: 1px dotted #d1e8ff;
+            }
+            .boxmodel-padding {
+                background: #ace2ac;
+                border: 1px dotted #d1e8ff;
+            }
+            .boxmodel-content {
+                background: #b3e5ff;
+                border: 1px dotted #d1e8ff;
+                padding: 0 14px;
+            }
+            .boxmodel-text {
+                color: black;
+                &.boxmodel-header {
+                    color: black;
+                }
+            }
         }
-        .boxmodel-content {
-            //background: #777;
-            text-shadow: 0px 0px 2px black;
-            border: 2px solid #222;
-            color: #fff;
-            border-radius: 6px;
-            box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 150px -50px black;
+        @include boxmodel-tooltip(#fff, #878, #877, #766, 2px);
+    }
+    
+    .boxmodel-ie-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {
+                color: #7485af;
+                font-family: "Consolas", "Monaco", monospace;
+                font-size: 11px;
+            }
+            span.boxmodel-text {
+                font-family: "Consolas", "Monaco", monospace;
+                font-size: 10px;
+                &.boxmodel-header {
+                    color: #7485af;
+                }
+            }
+            .boxmodel-margin {
+                background: #FFEFC7;
+                border: 1px solid #FAD05B;
+            }
+            .boxmodel-border {
+                background: #D3E7BC;
+                border: 1px solid #9BCD61;
+            }
+            .boxmodel-padding {
+                background: #FBD4C7;
+                border: 1px solid #F7A387;
+            }
+            .boxmodel-content {
+                background: #E2F3FB;
+                border: 1px solid #A8DDF6;
+                padding: 0 14px;
+            }
+            .boxmodel-text {
+                color: black;
+                &.boxmodel-header {
+                    color: black;
+                }
+            }
         }
-        .boxmodel-text {
-            color: #000;
-            &.boxmodel-header {
+        @include boxmodel-tooltip(#fff, #887, #887, #776, 0px);
+    }
+    
+    .boxmodel-rounded-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {}
+            input:focus, input:active {}
+            span.boxmodel-text {
+                &.boxmodel-header {
+                    top: 4px;
+                    left: 4px;
+                }
+            }
+            span.boxmodel-lock {
+                bottom: 6px;
+                right: 8px;
+                color: #555;
+            }
+            .boxmodel-margin {
+                border-radius: 12px;
+            }
+            .boxmodel-border {
+                border-radius: 12px;
+            }
+            .boxmodel-padding {
+                border-radius: 12px;
+            }
+            .boxmodel-content {
+                border-radius: 12px;
+            }
+            .boxmodel-text {
+                &.boxmodel-header {}
+            }
+        }
+        @include boxmodel-tooltip(#555, #888, #fff, #eee, 4px);
+    }
+    
+    .boxmodel-dark-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {
+                color: #778;
+            }
+            input:focus, input:active {
+                background: #000;
+                border-color: #111;
+            }
+            span.boxmodel-text {
+                &.boxmodel-header {
+                    color: #778;
+                }
+            }
+            span.boxmodel-lock {
+                color: #778;
+                &.boxmodel-locked {
+                    color: white;
+                }
+            }
+            .boxmodel-margin {
+                background: #000;
+                border: 1px dashed #556;
+            }
+            .boxmodel-border {
+                background: #223;
+                border: 2px solid #667;
+            }
+            .boxmodel-padding {
+                background: #112;
+                border: 1px dashed #556;
+            }
+            .boxmodel-content {
+                background: #001;
+                border: 1px solid #556;
+                color: white;
+            }
+            .boxmodel-text {
+                color: white;
+                &.boxmodel-header {
+                    color: white;
+                }
+            }
+        }
+        @include boxmodel-tooltip(#99A, #889, #334, #111, 3px);
+    }
+    
+    .boxmodel-neo-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {
+                color: #ccff00;
+            }
+            input:focus, input:active {
+                background: #111F11;
+                border-color: #94c409;
+            }
+            span.boxmodel-text {
+                &.boxmodel-header {
+                    color: #ccff00;
+                }
+            }
+            span.boxmodel-lock {
+                color: #ccff00;
+                &.boxmodel-locked {
+                    color: white;
+                }
+            }
+            .boxmodel-margin {
+                background: #000;
+                border: 1px dashed #ccff00;
+                border-radius: 6px;
+            }
+            .boxmodel-border {
+                background: #000;
+                border: 2px solid #ccff00;
+                border-radius: 6px;
+            }
+            .boxmodel-padding {
+                background: #000;
+                border: 1px dashed #ccff00;
+                border-radius: 6px;
+            }
+            .boxmodel-content {
+                background: #000;
+                border: 1px solid #ccff00;
+                color: #ccff00;
+                border-radius: 6px;
+            }
+            .boxmodel-text {
+                color: #ccff00;
+                &.boxmodel-header {
+                    color: #ccff00;
+                }
+            }
+        }
+        @include boxmodel-tooltip(#ccff00, #ccff00, #114400, #225500, 3px);
+    }
+    
+    .boxmodel-perspective-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {
+                color: #eee;
+            }
+            input:focus, input:active {
+                background: #000;
+                border-color: #fff;
+            }
+            span.boxmodel-text {
+                &.boxmodel-header {
+                    color: #fff;
+                    top: 2px;
+                    left: 3px;
+                    font-size: 9px;
+                    display: block;
+                    text-shadow: 1px 1px 1px black;
+                }
+            }
+            span.boxmodel-lock {
+                bottom: 5px;
+                right: 5px;
+                text-shadow: 1px 1px 1px black;
+                color: #eee;
+            }
+            .boxmodel-margin {
+                background: #21293A;
+                border: 1px dashed #aaa;
+                box-shadow: inset 0 0 20px 0px black;
+                border-radius: 6px;
+            }
+            .boxmodel-border {
+                background: #424252;
+                border: 2px solid #bbb;
+                border-radius: 6px;
+                box-shadow: inset 0 0 20px 0px black;
+            }
+            .boxmodel-padding {
+                background: #525262;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                box-shadow: inset 0 0 20px 0px black;
+            }
+            .boxmodel-content {
+                background: #828292;
+                border: 1px solid #ddd;
+                color: #fff;
+                border-radius: 6px;
+                box-shadow: inset 0 0 10px 0px black;
+            }
+            .boxmodel-text {
                 color: #000;
+                &.boxmodel-header {
+                    color: #000;
+                }
             }
         }
     }
-}
+    
+    .boxmodel-metal-skin {
+        .boxmodel-container {
+            input, input:focus, input:active {
+                color: #eee;
+                text-shadow: 0px 0px 2px black;
+            }
+            input:focus, input:active {}
+            span.boxmodel-text {
+                &.boxmodel-header {
+                    color: #ddd;
+                    text-shadow: 0px 0px 2px black;
+                    top: 2px;
+                    left: 3px;
+                }
+            }
+            span.boxmodel-lock {
+                bottom: 5px;
+                right: 5px;
+                text-shadow: 0px 0px 1px white;
+                color: #333;
+                &.boxmodel-locked {
+                    color: #fff;
+                }
+            }
+            .boxmodel-margin {
+                //background: #444;
+                border: 2px solid #222;
+                border-radius: 6px;
+                box-shadow: inset 0 0 1px 0 #222, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 200px -30px black;
+                &>span.boxmodel-text {
+                    &.boxmodel-header {
+                        color: black;
+                        text-shadow: none;
+                    }
+                }
+            }
+            .boxmodel-border {
+                //background: #555;
+                border: 2px solid #222;
+                border-radius: 6px;
+                box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 200px -30px black;
+            }
+            .boxmodel-padding {
+                //background: #666;
+                border: 2px solid #222;
+                border-radius: 6px;
+                box-shadow: inset 0 0 1px 0 #222, 0 0 1px 0 #666, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 150px -28px black;
+            }
+            .boxmodel-content {
+                //background: #777;
+                text-shadow: 0px 0px 2px black;
+                border: 2px solid #222;
+                color: #fff;
+                border-radius: 6px;
+                box-shadow: inset 0 0 1px 0 #333, 0 0 1px 0 #777, inset 0px 3px 3px -3px white, inset 0px -3px 3px -3px black, inset 0px -10px 150px -50px black;
+            }
+            .boxmodel-text {
+                color: #000;
+                &.boxmodel-header {
+                    color: #000;
+                }
+            }
+        }
+        @include boxmodel-tooltip(#333, #444, #eee, #ddd, 3px);
+    }

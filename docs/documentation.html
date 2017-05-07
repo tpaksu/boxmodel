@@ -9,20 +9,20 @@
         <link href="includes/bootstrap.min.css" rel="stylesheet" />
         <link href="includes/prism.css" rel="stylesheet" />
         <link href="includes/toc.css" rel="stylesheet" />
-        <link href="../build/css/boxmodel.min.css" rel="stylesheet" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="../js/jquery-2.1.4.min.js" type="text/javascript"><\/script>')</script>
+		<script>window.jQuery || document.write('<scr'+'ipt src="../js/jquery-2.1.4.min.js" type="text/javascript"><\/scr'+'ipt>')</script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="includes/prism.js" type="text/javascript"></script>                
-        <script src="includes/toc.min.js" type="text/javascript"></script>         
-        <script src="../build/js/boxmodel.obf.js" type="text/javascript"></script>         
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet"/>
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>        
+        <script src="includes/prism.js" type="text/javascript"></script>
+        <script src="includes/toc.min.js" type="text/javascript"></script>        
+        <link href="../build/css/boxmodel.min.css" rel="stylesheet"/>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    	<script src="../build/js/boxmodel.obf.js"></script>        
     </head>
-    <body>    
-    	<div class="container">
-    		<div class="row">
-                <div class="col-md-9"><h1 id="boxmodel-css-box-model-editor">BoxModel - CSS Box Model Editor</h1>
+    <body>        
+    	<div class="container-fluid">
+    		<div class="row content-all">    			
+                <div class="col-md-2 hidden-sm toc-container" id="scrollspy"></div>
+    			<div class="col-md-9 col-md-offset-2 col-sm-12 contents" id="contents"><h1 id="boxmodel-css-box-model-editor">BoxModel - CSS Box Model Editor</h1>
 <blockquote>
 <p>BoxModel is a jQuery plugin which helps it&#39;s users to create a compact form input for editing box model css in html forms. It can submit several details such as separate values and combined, optimized units ready for use inside CSS blocks. It supports mouse wheel input value increasing/decreasing, up/down keys, locking mechanism for editing the property for all directions, multiple styles, multiple unit support, label translations and more.</p>
 </blockquote>
@@ -109,44 +109,47 @@ boxmodel.init();
 <h2 id="events">Events</h2>
 <ul>
 <li><p><code>boxmodel:change</code> [event handler]: event which is triggered after changing any input on the boxmodel. Attached to the container element itself.</p>
-<p>  <strong>Prototype:</strong>
-  ```javascript</p>
-<pre><code>  $(&quot;.boxmodel&quot;).on(&quot;boxmodel:change&quot;, function(element, value, all){
-      ...
-  });
+<p>  <strong>Prototype:</strong></p>
+<pre><code class="lang-javascript">      $(&quot;.boxmodel&quot;).on(&quot;boxmodel:change&quot;, function(element, value, all){
+          ...
+      });
 
-  // parameters : element -&gt; the input which triggered the change event
-  //              value   -&gt; the input value
-  //              all     -&gt; all input values on the plugin as an object
-</code></pre><p>  ```<br><br></p>
+      // parameters : element -&gt; the input which triggered the change event
+      //              value   -&gt; the input value
+      //              all     -&gt; all input values on the plugin as an object
+</code></pre>
+<p><br>
+<br></p>
 </li>
 <li><p><code>boxmodel:blur</code> [event handler]:  event which is triggered after when an input loses focus on the container. Attached to the container element itself.</p>
-<p>  <strong>Prototype:</strong>
-  ```javascript</p>
-<pre><code>  $(&quot;.boxmodel&quot;).on(&quot;boxmodel:blur&quot;, function(element, value, all){
-      ...
-  });
+<p><strong>Prototype:</strong></p>
+<pre><code class="lang-javascript">      $(&quot;.boxmodel&quot;).on(&quot;boxmodel:blur&quot;, function(element, value, all){
+          ...
+      });
 
-  // parameters : element -&gt; the input which triggered the change event
-  //              value   -&gt; the input value
-  //              all     -&gt; all input values on the plugin as an object
-</code></pre><p>  ```<br><br></p>
+      // parameters : element -&gt; the input which triggered the change event
+      //              value   -&gt; the input value
+      //              all     -&gt; all input values on the plugin as an object
+</code></pre>
+<p><br>
+<br></p>
 </li>
 <li><p><code>boxmodel:keyup</code> [event handler]:  event which is triggered after when an input had a key pressed on the container. Attached to the container element itself.</p>
-<p>  <strong>Prototype:</strong>
-  ```javascript</p>
-<pre><code>  $(&quot;.boxmodel&quot;).on(&quot;boxmodel:keyup&quot;, function(event, element, value, all){
-      ...
-  });
+<p><strong>Prototype:</strong></p>
+<pre><code class="lang-javascript">      $(&quot;.boxmodel&quot;).on(&quot;boxmodel:keyup&quot;, function(event, element, value, all){
+          ...
+      });
 
-  // parameters :    event    -&gt; the DOM event
-  //                 element  -&gt; the input which triggered the change event
-  //                 value    -&gt; the input value
-  //                 all      -&gt; all input values on the plugin as an object
-</code></pre><p>  ```<br><br></p>
+      // parameters :    event    -&gt; the DOM event
+      //                 element  -&gt; the input which triggered the change event
+      //                 value    -&gt; the input value
+      //                 all      -&gt; all input values on the plugin as an object
+</code></pre>
+<p><br>
+<br></p>
 </li>
 <li><p><code>boxmodel:error</code> [event handler]:  event which is triggered after when an user input triggered a validation error on the container. Attached to the container element itself.</p>
-<p>  <strong>Prototype:</strong></p>
+<p><strong>Prototype:</strong></p>
 <pre><code class="lang-javascript">      $(&quot;.boxmodel&quot;).on(&quot;boxmodel:error&quot;, function(element, value, all){
           ...
       });
@@ -164,8 +167,9 @@ boxmodel.init();
 <ul>
 <li><code>getAllProperties</code> [function]: Gets all the inputs as an object.
 <br><br></li>
-<li><code>setValue</code> [function]: Sets a specific value, returns <code>false</code> if validation <code>fails</code>, does nothing and returns <code>true</code> when the related input doesn&#39;t exist.
-<br><strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
+<li><p><code>setValue</code> [function]: Sets a specific value, returns <code>false</code> if validation <code>fails</code>, does nothing and returns <code>true</code> when the related input doesn&#39;t exist.</p>
+<p><strong>Prototype:</strong></p>
+<pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
   //  parameters:
   //    string direction (top, left, bottom, right)
   //    string scope (margin, padding, border)
@@ -173,23 +177,27 @@ boxmodel.init();
   boxmodel.setValue(&quot;top&quot;,&quot;margin&quot;,&quot;5px&quot;);
   boxmodel.setValue(null, &quot;width&quot;, &quot;250px&quot;);
 </code></pre>
-<br><br></li>
+<p><br><br></p>
+</li>
 <li><code>setBorders</code> [function]: Sets all borders to a specific value, returns <code>false</code> if validation fails, does nothing and returns <code>true</code> when <code>enableBorder</code> is set to <code>false</code>.
-<br><strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
+<br>
+<strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
   //  parameters:
   //    string value
   boxmodel.setBorders(&quot;1px&quot;);
 </code></pre>
 <br><br></li>
 <li><code>setPaddings</code> [function]: Sets all paddings to a specific value, returns <code>false</code> if validation fails, does nothing and returns <code>true</code> when <code>enablePadding</code> is set to <code>false</code>.
-<br><strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
+<br>
+<strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
   //  parameters:
   //    string value
   boxmodel.setPaddings(&quot;8px&quot;);
 </code></pre>
 <br><br></li>
 <li><code>setMargins</code> [function]: Sets all borders to a specific value, returns <code>false</code> if validation fails, does nothing and returns <code>true</code> when <code>enableMargin</code> is set to <code>false</code>.
-<br><strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
+<br>
+<strong>Prototype:</strong><pre><code class="lang-javascript">  var boxmodel = $(&quot;#boxmodel&quot;).boxModel();
   //  parameters:
   //    string value
   boxmodel.setMargins(&quot;3px&quot;);
@@ -297,9 +305,9 @@ boxmodel.init();
         values: {
           margins: {
             top: "1px",
-            left: "2px"            
+            left: "2px"
           },
-          paddings: {            
+          paddings: {
             bottom: "4px"
           },
           borders: {
@@ -320,9 +328,9 @@ boxmodel.init();
         values: {
           margins: {
             top: &quot;1px&quot;,
-            left: &quot;2px&quot;            
+            left: &quot;2px&quot;
           },
-          paddings: {            
+          paddings: {
             bottom: &quot;4px&quot;
           },
           borders: {
@@ -352,11 +360,11 @@ boxmodel.init();
         values: {
           margins: {
             top: "1px",
-            left: "2py"            
+            left: "2py"
           },
-          paddings: {   
+          paddings: {
             top: "1px",
-            bottom: "4"            
+            bottom: "4"
           },
           borders: {
             leftx: "2px",
@@ -377,11 +385,11 @@ boxmodel.init();
         values: {
           margins: {
             top: &quot;1px&quot;,
-            left: &quot;2py&quot;            
+            left: &quot;2py&quot;
           },
-          paddings: {   
+          paddings: {
             top: &quot;1px&quot;,
-            bottom: &quot;4&quot;            
+            bottom: &quot;4&quot;
           },
           borders: {
             leftx: &quot;2px&quot;,
@@ -477,7 +485,7 @@ boxmodel.init();
 <p><div class="well well-sm" style="display: flex; align-items: center; justify-content: center; padding: 20px;"></p>
 <p><div id="boxmodel-ex-1-6" data-name="boxmodel-ex-1-6"></div>
 </div></p>
-<script type="text/javascript">$("#boxmodel-ex-1-6").boxModel({ 
+<script type="text/javascript">$("#boxmodel-ex-1-6").boxModel({
         values: {
           margins: "john doe 25ipx",
           paddings: "1em 2rem 3pem",
@@ -786,20 +794,25 @@ boxmodel.init();
 <p><br>
 <br>
 <br></p>
-</div>
-    			<div class="col-md-3 hidden-sm" id="scrollspy"></div>    			
+</div>                
 			</div>
 	    </div>
     	<script type="text/javascript">
+
         if((window.innerWidth <= 800 && window.innerHeight <= 600) || (window.innerWidth <= 600 && window.innerHeight <= 800)) {
-    	   $("img").addClass("img-responsive");
+            $(".hidden-sm").hide();
+            $("img").addClass("img-responsive");
         }else{
-            $('#scrollspy').DynamicScrollspy({
-                tH: 1,
-                bH: 4,
-                affix: true,
-                offset: 200
-            });    
+            tocbot.init({
+              // Where to render the table of contents.
+              tocSelector: '#scrollspy',
+              // Where to grab the headings to build the table of contents.
+              contentSelector: '#contents',
+              // Which headings to grab inside of the contentSelector element.
+              headingSelector: 'h1, h2, h3, h4',
+              positionFixedSelector: "#scrollspy",
+              collapseDepth: 6
+            });            
         }
     	</script>
     </body>

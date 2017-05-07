@@ -75,7 +75,7 @@
     function BoxModel( element, options ) {
         this.element = element;
         this.$element = $( element );
-        this._metadata = this.$element.data("plugin-options");
+        this._metadata = this.$element.data( "plugin-options" );
         this.options = $.extend( {}, defaults, options, this._metadata );
         this.inputs = null;
         this._defaults = defaults;
@@ -97,7 +97,7 @@
             if ( typeof this.options.onInit == 'function' ) this.options.onInit( this );
             this.bindEvents();
             this.inputs.val( this.options.emptyText ).attr( "size", 3 );
-            if(this.options.showEnabledUnits) this.$element.find(".boxmodel-container").append("<p class='boxmodel-info' style='width:"+ this.$element.find(".boxmodel-container").width()+"px'><b>" + this.options.enabledUnitsLabel + "</b> \"" + this.options.enabledUnits.join("\", \"") + "\"</p>");
+            if ( this.options.showEnabledUnits ) this.$element.find( ".boxmodel-container" ).append( "<p class='boxmodel-info' style='width:" + this.$element.find( ".boxmodel-container" ).width() + "px'><b>" + this.options.enabledUnitsLabel + "</b> \"" + this.options.enabledUnits.join( "\", \"" ) + "\"</p>" );
             this.setInitialValues();
         },
         /**
@@ -198,8 +198,8 @@
          */
         validate: function( elem ) {
             var value = elem.val();
-            if(value === "auto") value = this.options.autoText;
-            if ( value !== this.options.autoText && value !== this.options.emptyText) {
+            if ( value === "auto" ) value = this.options.autoText;
+            if ( value !== this.options.autoText && value !== this.options.emptyText ) {
                 var unit = this.getUnit( value );
                 var val = parseFloat( value );
                 if ( ( unit === value.substr( -1 * unit.length ) ) && ( val + "" + unit === value ) ) {
@@ -225,7 +225,7 @@
             this.$element.find( "span.boxmodel-lock" ).on( "click", $.proxy( this.lockEvent, this ) );
             this.$element.find( "input[name='" + this.options.inputName + "_auto_text']" ).val( this.options.autoText );
             this.$element.find( "input[name='" + this.options.inputName + "_empty_text']" ).val( this.options.emptyText );
-            if(this.options.showShortcuts) this.appendAutoLinks();
+            if ( this.options.showShortcuts ) this.appendAutoLinks();
             this.updateMarginCombined();
             this.updateBorderCombined();
             this.updatePaddingCombined();
@@ -235,57 +235,65 @@
          * appends auto links after inputs and adds the hover and click event
          * @return {null} null
          */
-        appendAutoLinks: function(){
+        appendAutoLinks: function() {
             var that = this;
-            $("<div class='boxmodel-links' style='display:none;'><a data-value='auto'>"+that.options.autoPasteLabel+"<span><a data-value='clear'>"+that.options.clearLabel+"<span><a data-value='clearall'>"+that.options.clearAllLabel+"<span></div>").appendTo(this.$element);
-            var autoLink = this.$element.find(".boxmodel-links");
-            this.inputs.on("focus", function(){
-                var that2 = $(this);
-                if(that2.parents(".boxmodel-input-container").length > 0){                    
-                    var direction = "";                    
-                    autoLink.removeClass("boxmodel-links-arrow-bottom boxmodel-links-arrow-left boxmodel-links-arrow-right boxmodel-links-arrow-top");
-                    if(that.options.tooltipsInside){
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-bottom")) direction = "boxmodel-links-arrow-bottom";
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-top")) direction = "boxmodel-links-arrow-top";
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-left")) direction = "boxmodel-links-arrow-left";
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-right")) direction = "boxmodel-links-arrow-right";                        
-                        autoLink.addClass(direction);
-                        that.setTooltipPosition(that2, autoLink, {"top":"bottom","left":"right","bottom":"top","right":"left"}[direction.replace("boxmodel-links-arrow-","")], that.options.tooltipsInside);
-                    }else{
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-bottom")) direction = "boxmodel-links-arrow-top";
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-top")) direction = "boxmodel-links-arrow-bottom";
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-left")) direction = "boxmodel-links-arrow-right";
-                        if(that2.parents(".boxmodel-input-container").hasClass("boxmodel-input-direction-right")) direction = "boxmodel-links-arrow-left";                        
-                        autoLink.addClass(direction);
-                        that.setTooltipPosition(that2, autoLink, direction.replace("boxmodel-links-arrow-",""), that.options.tooltipsInside);
+            $( "<div class='boxmodel-links' style='display:none;'><a data-value='auto'>" + that.options.autoPasteLabel + "<span><a data-value='clear'>" + that.options.clearLabel + "<span><a data-value='clearall'>" + that.options.clearAllLabel + "<span></div>" ).appendTo( this.$element );
+            var autoLink = this.$element.find( ".boxmodel-links" );
+            this.inputs.on( "focus", function() {
+                var that2 = $( this );
+                if ( that2.parents( ".boxmodel-input-container" ).length > 0 ) {
+                    var direction = "";
+                    autoLink.removeClass( "boxmodel-links-arrow-bottom boxmodel-links-arrow-left boxmodel-links-arrow-right boxmodel-links-arrow-top" );
+                    if ( that.options.tooltipsInside ) {
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-bottom" ) ) direction = "boxmodel-links-arrow-bottom";
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-top" ) ) direction = "boxmodel-links-arrow-top";
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-left" ) ) direction = "boxmodel-links-arrow-left";
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-right" ) ) direction = "boxmodel-links-arrow-right";
+                        autoLink.addClass( direction );
+                        that.setTooltipPosition( that2, autoLink, {
+                            "top": "bottom",
+                            "left": "right",
+                            "bottom": "top",
+                            "right": "left"
+                        }[ direction.replace( "boxmodel-links-arrow-", "" ) ], that.options.tooltipsInside );
+                    } else {
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-bottom" ) ) direction = "boxmodel-links-arrow-top";
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-top" ) ) direction = "boxmodel-links-arrow-bottom";
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-left" ) ) direction = "boxmodel-links-arrow-right";
+                        if ( that2.parents( ".boxmodel-input-container" ).hasClass( "boxmodel-input-direction-right" ) ) direction = "boxmodel-links-arrow-left";
+                        autoLink.addClass( direction );
+                        that.setTooltipPosition( that2, autoLink, direction.replace( "boxmodel-links-arrow-", "" ), that.options.tooltipsInside );
                     }
-                    that2.addClass("boxmodel-focus");
-                    autoLink.fadeIn("fast");
+                    that2.addClass( "boxmodel-focus" );
+                    autoLink.fadeIn( "fast" );
                 }
-            }).on("blur", function(){
-                var that2 = $(this);
-                if(that2.parents(".boxmodel-input-container").length > 0){
+            } ).on( "blur", function() {
+                var that2 = $( this );
+                if ( that2.parents( ".boxmodel-input-container" ).length > 0 ) {
                     autoLink.hide();
-                    setTimeout(function(){
-                        that2.removeClass("boxmodel-focus");
-                    }, 50);
+                    setTimeout( function() {
+                        that2.removeClass( "boxmodel-focus" );
+                    }, 50 );
                 }
-            });
-            autoLink.find("a[data-value='auto']").on("mousedown", function(){
-                var elem = $(".boxmodel-focus");
-                elem.val(that.options.autoText);
-                that.changeEvent(elem);
-            });
-            autoLink.find("a[data-value='clear']").on("mousedown", function(){
-                var elem = $(".boxmodel-focus");
-                elem.val(that.options.emptyText);
-                that.changeEvent(elem);
-            });
-            autoLink.find("a[data-value='clearall']").on("mousedown", function(){
-                var elem = $(".boxmodel-focus");
-                that.inputs.val(that.options.emptyText);
-                that.changeEvent(elem);
-            });
+            } );
+            autoLink.find( "a[data-value='auto']" ).on( "mousedown", function() {
+                var elem = $( ".boxmodel-focus" );
+                elem.val( that.options.autoText );
+                that.changeEvent( elem );
+            } );
+            autoLink.find( "a[data-value='clear']" ).on( "mousedown", function() {
+                var elem = $( ".boxmodel-focus" );
+                elem.val( that.options.emptyText );
+                that.changeEvent( elem );
+            } );
+            autoLink.find( "a[data-value='clearall']" ).on( "mousedown", function() {
+                var elem = $( ".boxmodel-focus" );
+                that.inputs.val( that.options.emptyText );
+                that.inputs.each(function(){
+                    var elem = $(this);                    
+                    elem.attr( 'size', elem.val().length < 3 ? 3 : elem.val().length );
+                });
+            } );
         },
         /**
          * sets the tooltip position relative to the active input
@@ -293,66 +301,66 @@
          * @param {element} tooltip   the tooltip which needs to be repositioned
          * @param {string}  direction the edge of the input where the tooltip should be positioned
          */
-        setTooltipPosition: function(input, tooltip, direction, positionInside){
-            if(positionInside == true){
-                switch(direction){
+        setTooltipPosition: function( input, tooltip, direction, positionInside ) {
+            if ( positionInside === true ) {
+                switch ( direction ) {
                     case "top":
-                        tooltip.css({
+                        tooltip.css( {
                             top: input.offset().top - tooltip.outerHeight() - 13,
-                            left: input.offset().left - (tooltip.outerWidth() - input.outerWidth())/2 
-                        });
-                    break;
+                            left: input.offset().left - parseInt( ( tooltip.outerWidth() - input.outerWidth() ) / 2, 10 )
+                        } );
+                        break;
                     case "bottom":
-                        tooltip.css({
+                        tooltip.css( {
                             top: input.offset().top + input.outerHeight(),
-                            left: input.offset().left - (tooltip.outerWidth() - input.outerWidth())/2 
-                        });
-                    break;
+                            left: input.offset().left - parseInt( ( tooltip.outerWidth() - input.outerWidth() ) / 2, 10 )
+                        } );
+                        break;
                     case "right":
-                        tooltip.css({
-                            top: input.offset().top - (tooltip.outerHeight() - 6) /2,
+                        tooltip.css( {
+                            top: input.offset().top - parseInt( ( tooltip.outerHeight() - 6 ) / 2, 10 ),
                             left: input.offset().left + input.outerWidth() + 6
-                        });
-                    break;
+                        } );
+                        break;
                     case "left":
-                        tooltip.css({
-                            top: input.offset().top - (tooltip.outerHeight() - 6) /2,
+                        tooltip.css( {
+                            top: input.offset().top - parseInt( ( tooltip.outerHeight() - 6 ) / 2, 10 ),
                             left: input.offset().left - tooltip.outerWidth() - 6
-                        });
-                    break;
+                        } );
+                        break;
                 }
-            }else{
-                switch(direction){
+            } else {
+                switch ( direction ) {
                     case "bottom":
-                        tooltip.css({
-                            top: input.offset().top - tooltip.outerHeight() - 13,
-                            left: input.offset().left - (tooltip.outerWidth() - input.outerWidth())/2 
-                        });
-                    break;
+                        tooltip.css( {
+                            top: input.offset().top - tooltip.outerHeight() - 10,
+                            left: input.offset().left + 2 - parseInt( ( tooltip.outerWidth() - input.outerWidth() ) / 2, 10 )
+                        } );
+                        break;
                     case "top":
-                        tooltip.css({
+                        tooltip.css( {
                             top: input.offset().top + input.outerHeight(),
-                            left: input.offset().left - (tooltip.outerWidth() - input.outerWidth())/2 
-                        });
-                    break;
+                            left: input.offset().left + 2 - parseInt( ( tooltip.outerWidth() - input.outerWidth() ) / 2 )
+                        } );
+                        break;
                     case "left":
-                        tooltip.css({
-                            top: input.offset().top - (tooltip.outerHeight() - 6) /2,
-                            left: input.offset().left + input.outerWidth() + 6
-                        });
-                    break;
+                        tooltip.css( {
+                            top: input.offset().top + 3 - parseInt( ( tooltip.outerHeight() ) / 2, 10 ),
+                            left: input.offset().left + input.outerWidth() + 1
+                        } );
+                        break;
                     case "right":
-                        tooltip.css({
-                            top: input.offset().top - (tooltip.outerHeight() - 6) /2,
-                            left: input.offset().left - tooltip.outerWidth() - 6
-                        });
-                    break;
+                        tooltip.css( {
+                            top: input.offset().top + 3 - parseInt( ( tooltip.outerHeight() ) / 2, 10 ),
+                            left: input.offset().left - tooltip.outerWidth() + 1
+                        } );
+                        break;
                 }
             }
         },
-        focusEvent: function( event ){
+        focusEvent: function( event ) {
             var elem = $( event.target );
-            if(elem.val() == this.options.emptyText) elem.val("");
+            if ( elem.val() == this.options.emptyText ) elem.val( "" );
         },
         /**
          * event handler for lock buttons
@@ -361,8 +369,8 @@
          */
         lockEvent: function( event ) {
             var elem = $( event.target );
-            if(!elem.hasClass("boxmodel-lock")) {
-                elem = elem.closest(".boxmodel-lock");
+            if ( !elem.hasClass( "boxmodel-lock" ) ) {
+                elem = elem.closest( ".boxmodel-lock" );
             }
             elem.toggleClass( "boxmodel-locked" );
             if ( elem.hasClass( "boxmodel-locked" ) ) {
@@ -549,7 +557,7 @@
         getInputValue: function( property ) {
             var val = this.$element.find( "input[name='" + this.options.inputName + "_" + property + "']" ).val();
             if ( val == this.options.autoText ) return "auto";
-            if ( val == this.options.emptyText) return "initial";
+            if ( val == this.options.emptyText ) return "initial";
             return val;
         },
         /**
@@ -589,7 +597,7 @@
                     output.attr( 'size', output.val().length < 3 ? 3 : output.val().length );
                     return true;
                 } else {
-                    output.val(this.options.emptyText);
+                    output.val( this.options.emptyText );
                     return false;
                 }
             }

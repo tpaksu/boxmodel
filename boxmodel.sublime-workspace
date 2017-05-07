@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5167,
+				"buffer_size": 5158,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "<html>"
@@ -533,16 +533,8 @@
 			"file": "js/boxmodel.js",
 			"settings":
 			{
-				"buffer_size": 32248,
+				"buffer_size": 38082,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 463,
 				"line_ending": "Windows"
 			}
 		},
@@ -550,7 +542,43 @@
 			"file": "css/boxmodel.scss",
 			"settings":
 			{
-				"buffer_size": 16525,
+				"buffer_size": 21522,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/includes/template.html",
+			"settings":
+			{
+				"buffer_size": 2316,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "documentation.md",
+			"settings":
+			{
+				"buffer_size": 25236,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 3558,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/includes/toc.css",
+			"settings":
+			{
+				"buffer_size": 2287,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -563,10 +591,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 263.0,
-		"last_filter": "install",
+		"height": 398.0,
+		"last_filter": "color",
 		"selected_items":
 		[
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"color picker",
+				"Color Picker: Insert Color"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -582,10 +626,6 @@
 			[
 				"larvel make",
 				"Laravel Artisan 5: Make:Controller"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
 			],
 			[
 				"php",
@@ -702,10 +742,6 @@
 			[
 				"remo",
 				"Package Control: Remove Package"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"ajax",
@@ -849,17 +885,25 @@
 	},
 	"expanded_folders":
 	[
-		"/D/trunk/boxmodel"
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/build",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/build/css",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/build/js",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/docs",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/docs/includes"
 	],
 	"file_history":
 	[
+		"/C/Users/taha.paksu/Desktop/trunk/caleran/Gruntfile.js",
+		"/C/Users/taha.paksu/Desktop/trunk/caleran/package.json",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/package.json",
+		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/docs/documentation.html",
 		"/D/trunk/boxmodel/documentation.md",
 		"/D/trunk/boxmodel/docs/includes/template.html",
 		"/C/Projects/Chrome/EdipBaseLib-DEV011024-11-creditfix/EdipBaseLib/EDIPBASE.err",
 		"/C/Users/taha.paksu/Desktop/Ekran tasarımları yeni/yemek kartı yeni ödeme butonu/files.txt",
 		"/D/trunk/boxmodel/Gruntfile.js",
 		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/build/js/boxmodel.obf.js",
-		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/package.json",
 		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/docs/includes/template.html",
 		"/C/Users/taha.paksu/Desktop/trunk/calran-tools/calran/js/caleran.js",
 		"/C/Users/taha.paksu/Desktop/trunk/boxmodel/docs/includes/toc.css",
@@ -977,10 +1021,7 @@
 		"/C/laragon/www/wordpress/wp-content/themes/watcher/template-blog.php",
 		"/C/laragon/www/wordpress/wp-content/themes/watcher/lib/imdb_top250.php",
 		"/C/laragon/www/wordpress/wp-content/themes/watcher/lib/metaboxes.php",
-		"/C/laragon/tmp/php_errors.log",
-		"/C/laragon/www/wordpress/wp-content/themes/watcher/templates/header.php",
-		"/C/laragon/www/wordpress/wp-admin/includes/class-wp-internal-pointers.php",
-		"/C/Users/taha.paksu/AppData/Local/Temp/fz3temp-1/editorial-featured-slider.php"
+		"/C/laragon/tmp/php_errors.log"
 	],
 	"find":
 	{
@@ -1023,6 +1064,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"-chrome-tooltip",
+			"#B7EBEE",
+			"#748787",
 			");",
 			"<input type='text' ",
 			"autotext",
@@ -1147,10 +1191,7 @@
 			"dispatch",
 			"needs_update",
 			"showAll",
-			"request",
-			"fetchFromFoursquare",
-			"setFocus",
-			"icon:"
+			"request"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1158,6 +1199,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"$background-color-chrome-tooltip",
+			"$border-color-chrome-tooltip",
 			"<input type='text' autocomplete='off' ",
 			"1-6",
 			"1-5",
@@ -1282,10 +1326,7 @@
 			",",
 			"0x\\1,",
 			",",
-			"\\n",
-			"\\1 ",
-			"",
-			"sparkline"
+			"\\n"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1296,7 +1337,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1305,15 +1346,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5167,
+						"buffer_size": 5158,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								260,
-								260
+								4143,
+								4143
 							]
 						],
 						"settings":
@@ -1326,10 +1367,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1338,15 +1379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32248,
+						"buffer_size": 38082,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15074,
-								15074
+								19279,
+								19279
 							]
 						],
 						"settings":
@@ -1358,57 +1399,27 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3018.0,
+						"translation.y": 5578.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "package.json",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 463,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "css/boxmodel.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16525,
+						"buffer_size": 21522,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5621,
-								5621
+								226,
+								226
 							]
 						],
 						"settings":
@@ -1419,10 +1430,133 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1921.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "docs/includes/template.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2151,
+								2151
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "documentation.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15877,
+								15877
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6105.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								987,
+								987
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 311.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "docs/includes/toc.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								344,
+								344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
