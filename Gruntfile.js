@@ -24,14 +24,14 @@ module.exports = function( grunt ) {
         watch: {
             scripts: {
                 files: [ 'js/boxmodel.js' ],
-                tasks: [ 'uglify', 'jsObfuscate' ]
+                tasks: [ 'uglify' ]
             },
             styles: {
                 files: [ 'css/boxmodel.scss' ],
                 tasks: 'sass'
             },
             docs: {
-                files: [ 'documentation.md','docs/includes/template.html' ],
+                files: [ 'index.md','docs/includes/template.html' ],
                 tasks: 'markdown'
             }
         },
@@ -39,8 +39,8 @@ module.exports = function( grunt ) {
             all: {
                 files: [ {
                     expand: true,
-                    src: ['documentation.md'],
-                    dest: 'docs/',
+                    src: ['index.md'],
+                    dest: './',
                     ext: '.html'
                 } ],
                 options: {
@@ -49,64 +49,12 @@ module.exports = function( grunt ) {
                     autoTemplateFormat: 'html'
                 }
             }
-        },
-        jsObfuscate: {
-            default: {
-                files: {
-                    'build/js/boxmodel.obf.js': 'build/js/boxmodel.min.js'
-                }
-            }
-        },
-        compress: {
-            main: {
-                options: {
-                    archive: 'output/boxmodel.zip'
-                },
-                files: [ {
-                    src: [ 'css/**' ],
-                    dest: '/',
-                }, {
-                    src: [ 'build/**' ],
-                    dest: '/'
-                }, {
-                    src: [ 'js/**' ],
-                    dest: '/'
-                }, {
-                    src: [ 'docs/**' ],
-                    dest: '/'
-                }, {
-                    src: [ 'gruntfile.js', '.gitignore', '.jshintrc', 'package.json', 'documentation.md', 'CHANGELOG' ],
-                    dest: '/'
-                }, ]
-            },
-            screenshots: {
-                options: {
-                    archive: 'output/screenshots.zip'
-                },
-                files: [ {
-                    expand: true,
-                    cwd: 'toolbox/screenshots/',
-                    src: [ '*.png', '!inline.png', '!thumbnail.png' ],
-                    dest: '/'
-                } ]
-            },
-        },
-        copy: {
-            main: {
-                expand: true,
-                cwd: 'toolbox',
-                src: [ 'inline.png', 'thumbnail.png' ],
-                dest: 'output/',
-            },
-        }
+        }        
     } );
     grunt.loadNpmTasks( 'grunt-markdown' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
-    grunt.loadNpmTasks( 'js-obfuscator' );
-    grunt.loadNpmTasks( 'grunt-contrib-compress' );
-    grunt.loadNpmTasks( 'grunt-contrib-copy' );
-    grunt.registerTask( 'min', [ 'uglify', 'jsObfuscate', 'sass', 'markdown', 'compress', 'copy' ] );
-    grunt.registerTask( 'default', [ 'uglify', 'jsObfuscate', 'sass', 'markdown', 'compress', 'copy' ] );
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );    
+    grunt.registerTask( 'min', [ 'uglify', 'sass', 'markdown' ] );
+    grunt.registerTask( 'default', [ 'uglify', 'sass', 'markdown' ] );
 };

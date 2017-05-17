@@ -49,6 +49,7 @@ a.toc-link {
 .contents {
     margin-bottom: 1vmin;
     padding: 0 30px;
+    position: static;
 }
 
 .doc-feature-container {
